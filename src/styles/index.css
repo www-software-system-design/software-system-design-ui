@@ -1,0 +1,38 @@
+@import '../tokens/tokens.css';
+
+.ssd-scope {
+  color: var(--ssd-color-text);
+  background: var(--ssd-color-surface);
+  font-family: var(--ssd-font-family);
+}
+
+.ssd-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ssd-space-2);
+  min-block-size: 2.75rem;
+  padding-block: var(--ssd-space-2);
+  padding-inline: var(--ssd-space-4);
+  border: 1px solid transparent;
+  border-radius: var(--ssd-radius-control);
+  background: var(--ssd-color-action);
+  color: var(--ssd-color-on-action);
+  font-family: var(--ssd-font-family);
+  font-size: var(--ssd-font-size);
+  line-height: 1.5;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter var(--ssd-motion-duration) ease;
+}
+
+.ssd-button[data-variant='secondary'] {
+  color: var(--ssd-color-text);
+  background: var(--ssd-color-surface);
+  border-color: var(--ssd-color-border);
+}
+
+.ssd-button:hover:not(:disabled) { filter: brightness(0.92); }
+.ssd-button:focus-visible { outline: 3px solid var(--ssd-color-focus); outline-offset: 3px; }
+.ssd-button:disabled { opacity: 0.55; cursor: not-allowed; }
