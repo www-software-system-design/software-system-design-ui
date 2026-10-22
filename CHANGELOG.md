@@ -4,7 +4,10 @@
 
 ## 0.2.0
 
-Unreleased; prepared for owner review.
+- Automatically validate and release new manifest versions on main pushes: create
+  the version tag, publish the tested npm archive with provenance, verify registry
+  integrity and create a GitHub release. Repeated versions skip and partial releases
+  can resume from their original Actions run. See [release instructions](docs/releases.md).
 
 - Extract fourteen atomic React components for navigation, page layouts, cards,
   headings, disclosures, fields, metrics, records, pagination and async feedback.

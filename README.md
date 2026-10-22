@@ -4,10 +4,10 @@ Shared React component-library scaffold for software-system.design microfrontend
 
 The public npm package is `@software-system.design/ui`, licensed under [Apache-2.0](LICENSE). The first release is version `0.1.0`. The [release guide](docs/releases.md) covers npm publication and static Storybook hosting on Amplify at `storybook.software-system.design`.
 
-The working tree prepares **0.2.0** with fourteen components extracted from the
-informational container and its light/dark brand palette. See the
-[component and migration guide](docs/container-extraction.md). This version has
-not been published by the extraction workflow.
+Version **0.2.0** adds fourteen components extracted from the informational
+container and its light/dark brand palette. See the
+[component and migration guide](docs/container-extraction.md). Main pushes
+automatically release new manifest versions after validation; see the release guide.
 
 ## Setup
 

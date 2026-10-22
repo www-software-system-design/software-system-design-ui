@@ -140,7 +140,7 @@
     "generate:component": "node scripts/generate-component.mjs",
     "test:generator": "node --test scripts/generate-component.test.mjs",
     "test:config": "node --test scripts/vitest-projects.test.mjs",
-    "test:release": "node --test scripts/release.test.mjs",
+    "test:release": "node --test scripts/release.test.mjs scripts/automatic-release.test.mjs",
     "check:release": "node scripts/check-release.mjs",
     "prepublishOnly": "npm run check:release && npm run check:package",
     "check": "npm run lint && npm run typecheck && npm test && npm run test:generator && npm run test:config && npm run test:release && npm run check:package"

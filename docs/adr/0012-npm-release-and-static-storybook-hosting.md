@@ -2,6 +2,8 @@
 
 The original publication recorded here used the long package name. [ADR 0013](0013-short-ui-package-name.md) supersedes that identity with `@software-system.design/ui`; the release and hosting workflow still applies.
 
+[ADR 0015](0015-automatic-main-releases.md) supersedes the manual dispatch/tagging policy with automatic versioned releases on main pushes. Hosting remains independent.
+
 - Date: 2026-10-22
 - Status: Accepted. Apache-2.0, organization scope `@software-system.design`, publishing account `vaniyathans`, and `storybook.software-system.design` on Amplify/Route 53 are confirmed. The owner will perform AWS deployment and DNS configuration.
 - Implementation: Release metadata validation, a tagged publishing workflow, and Amplify static build settings added. Scoped version 0.1.0 is published and publicly verified, including an anonymous tarball download matching the tested artifact's SHA-512 integrity. The owner performs Storybook hosting and domain verification using the supplied archive and guide.

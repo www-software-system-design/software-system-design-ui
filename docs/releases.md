@@ -47,7 +47,45 @@ Configure these settings on the `@software-system.design/ui` npm package. Truste
 
 The workflow uses GitHub-hosted Windows runners for the reviewed visual baselines, Node 24, and npm 11.19.0. It grants `id-token: write` to the publishing job and publishes the tarball tested by the packed Next.js consumer. No npm write token is stored in GitHub. See [npm trusted publishing](https://docs.npmjs.com/trusted-publishers/).
 
-For each stable release, update the version and lockfile, add a matching `## <version>` changelog heading, and create a matching `v<version>` tag. In GitHub Actions, run **Publish npm package** from the default branch and enter that tag as `release_tag`. The workflow checks out and validates the tag before publication. It publishes stable versions to npm's `latest` tag; prerelease versions are rejected. A failed release must be fixed and revalidated before retrying. Published versions cannot be overwritten; use a new version for a correction.
+Pushes to **main** now run **Publish npm package** automatically. The version in
+`package.json` controls the release; the workflow does not increment versions or
+write commits back to main. For a new release:
+
+1. Update the manifest and lockfile together, for example with
+   `npm.cmd version patch --no-git-tag-version` (choose minor/major when appropriate).
+2. Add a matching `## <version>` changelog entry describing the release and migration.
+3. Commit those updates with the implementation and push/merge to main.
+
+The workflow pins the triggering commit SHA, validates release metadata, and runs
+all repository, story, visual and packed-consumer checks. It then creates
+`v<version>` at that exact commit, publishes the tested tarball to npm with
+provenance, checks registry SHA-512 integrity, and creates the GitHub release from
+that version's changelog section. Stable versions publish to npm's `latest` tag.
+Prereleases, version downgrades and moving existing tags are rejected.
+
+If npm, the tag and GitHub release already exist, later pushes with that same
+version skip release work; ordinary CI still validates the changes. Bump the
+version to ship further code changes. The initial push containing this workflow
+is eligible to release the manifest's version if it is new on npm.
+
+For a transient failure, use **Re-run failed jobs** on the original Actions run.
+A created tag is reused only for the original commit. If npm publication succeeded
+but GitHub release creation failed, retrying verifies npm integrity and creates
+the missing GitHub release without republishing. If main has advanced while a
+release is incomplete, rerun the original run rather than moving its tag. The
+**Run workflow** button remains available for main without a tag input.
+
+The job requests `contents: write` for tags/releases and `id-token: write` for npm.
+Ensure repository tag rules permit the release workflow and that the npm trusted
+publisher above is configured; no personal access token or npm write token is
+required. Runs are serialized with a bounded pending queue and do not cancel a
+release already running. Workflow-created tags do not need to trigger a second
+workflow: npm and GitHub publication happen in this same run. See
+[GitHub concurrency](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency)
+and [release API](https://docs.github.com/en/rest/releases/releases).
+
+See [ADR 0015](adr/0015-automatic-main-releases.md). This supersedes the previous
+manual tagged-release procedure; historical publication records remain unchanged.
 
 ## Storybook under software-system.design
 
