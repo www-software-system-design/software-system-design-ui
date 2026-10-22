@@ -2,7 +2,7 @@
 
 - Date: 2026-10-20
 - Status: Accepted
-- Implementation: Atomic scaffold, component generator, and dependency/artifact checks implemented. Higher layers remain empty until justified by real components.
+- Implementation: Atomic scaffold, component generator, and dependency/artifact checks implemented. Every level now has a reference component with tests and stories; see ADR 0011.
 
 ## Context
 
@@ -45,7 +45,7 @@ docs/
 
 Colocate implementation, tests, stories, and local exports. Add style, type, reducer, or helper files only when useful. Rendering boundaries are addressed in [ADR 0005](0005-server-and-client-component-boundaries.md), within this single hierarchy. The Next.js consumer is an unpublished test application for SSR, hydration, and consumption from MFE Server Components, not a collection of library Server Components; see [ADR 0009](0009-packed-package-nextjs-consumer-tests.md).
 
-Public component entry points omit atomic categories, so reclassification does not change consumer imports. The public package name is undecided; `component-lib` remains provisional. Run `npm run generate:component -- atoms Example` to generate an implementation with its client boundary, intentionally failing test, story, and local exports without creating server/client variants. Public entry points remain deliberate review steps rather than automatic exports of unfinished components.
+Public component entry points omit atomic categories, so reclassification does not change consumer imports. The agreed public package name is `@software-system.design/ui`, as finalized in [ADR 0013](0013-short-ui-package-name.md). Run `npm run generate:component -- atoms Example` to generate an implementation with its client boundary, intentionally failing test, story, and local exports without creating server/client variants. Public entry points remain deliberate review steps rather than automatic exports of unfinished components.
 
 Architecture changes need an ADR explaining alternatives, compatibility, and migration impact. Routine component additions follow the established scaffold.
 

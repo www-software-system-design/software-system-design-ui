@@ -27,13 +27,12 @@ export interface UIProviderProps extends Omit<ComponentPropsWithoutRef<'div'>, '
 /** An isolated DOM scope: no global document mutations or shared mutable store. */
 export function UIProvider({ theme, locale, direction, messages, children, className, ...props }: UIProviderProps) {
   const parent = useUI();
-  const loading = messages?.loading ?? parent.messages.loading;
   const value = useMemo<UIConfiguration>(() => ({
     theme: theme ?? parent.theme,
     locale: locale ?? parent.locale,
     direction: direction ?? parent.direction,
-    messages: { loading }
-  }), [theme, locale, direction, loading, parent.theme, parent.locale, parent.direction]);
+    messages: { ...parent.messages, ...messages }
+  }), [theme, locale, direction, messages, parent.messages, parent.theme, parent.locale, parent.direction]);
 
   return (
     <UIContext value={value}>

@@ -12,7 +12,7 @@ The earlier ADRs defined component contracts and proposed tools. The owner autho
 
 - Use TypeScript to emit individual ESM modules and declarations. Explicit `.js` source import specifiers resolve correctly in emitted code. This preserves leading client directives without a bundler plugin. No CommonJS distribution is promised initially.
 - Copy plain CSS and semantic tokens to `dist/` while preserving their relative import paths. Consumers import the documented stylesheet; Tailwind and CSS-in-JS runtimes are not required.
-- Retain the existing `component-lib` identity and `private: true` until the npm scope/name, ownership, and license are confirmed. Packing and consumer installation work without publishing.
+- The original package identity was `@software-system.design/software-system-design-ui`; [ADR 0013](0013-short-ui-package-name.md) supersedes it with `@software-system.design/ui`. The initial publication guard was retained until ownership, license, and release policy were confirmed. Packing and consumer installation work without publishing.
 - Declare React and React DOM `^19.3.0` peers. Pin the initial test consumer to React 19.3.1 and Next.js 16.4.2. This does not claim validation of every version permitted by the peer range. Broader version support requires additional fixtures or a version matrix.
 - Use Node.js 24 for the CI tooling, with a declared tooling minimum of 22.12.0. This does not set the browser support policy for every MFE.
 - Use Storybook 10.6.3 with its React/Vite adapter and Vitest integration, Vitest 5.0.5, and Vite 8.3.4. Keep fast jsdom tests separate from Storybook browser configuration so the TDD loop does not require Storybook startup.
@@ -26,12 +26,12 @@ The earlier ADRs defined component contracts and proposed tools. The owner autho
 - Bundle the package into one client module: obscures fine-grained entry points and makes directive preservation more complicated.
 - Keep the Next.js app at the repository root: leaves the library build and application build coupled.
 - Introduce a styling runtime or global state dependency during scaffolding: imposes consumer requirements without an established need.
-- Enable publishing immediately: the public npm identity and license have not been chosen.
+- Enable publishing immediately: ownership, license, and the release process still require confirmation.
 - Force a newer ESLint major despite plugin peer constraints: produces an unsupported dependency combination rather than a validated upgrade.
 
 ## Consequences
 
-The package has a deliberately small runtime surface and an ESM-only initial contract. Higher atomic levels exist as documented extension points, not artificial example components. The scaffold demonstrates one Button and an optional UI configuration provider; it is not a complete design-system component catalog.
+The initial package had a deliberately small runtime surface and an ESM-only contract, demonstrating Button and an optional UI configuration provider. Higher atomic levels began as documented extension points. [ADR 0011](0011-reference-examples-for-every-atomic-layer.md) records their subsequent expansion into coherent reference examples. This remains a foundation rather than a complete design-system component catalog.
 
 The local Windows host lacks the Visual C++ runtime required by Storybook's native resolver. Local validation used an uncommitted WebAssembly resolver fallback installed without changing the manifest or lockfile. The normal setup should provide the standard Windows runtime; this workaround is not a package runtime dependency or a prerequisite for Linux consumers.
 

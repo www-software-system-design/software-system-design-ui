@@ -5,6 +5,8 @@ import { npm } from './run.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const artifactDir = fileURLToPath(new URL('../.artifacts/', import.meta.url));
+const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
+assert.equal(pkg.name, '@software-system.design/ui', 'The packed library must use its agreed organization-scoped package name');
 mkdirSync(artifactDir, { recursive: true });
 // Keep lifecycle output separate from npm's machine-readable JSON.
 npm(['run', 'build'], { cwd: root });
@@ -16,7 +18,7 @@ for (const path of files) {
   assert(path === 'package.json' || /^((README|LICENSE)(\..*)?)$/i.test(path) || /^dist\/.*\.(js|d\.ts|css)$/.test(path), `Unexpected published file: ${path}`);
   assert(!/\.(test|stories)\./.test(path), `Development-only file published: ${path}`);
 }
-const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
+assert.equal(packed.name, pkg.name, 'The tarball identity must match the package manifest');
 assert(!pkg.dependencies?.next, 'Next.js cannot be a runtime dependency');
 assert(pkg.peerDependencies.react && pkg.peerDependencies['react-dom'], 'React must be supplied by consumers');
 for (const target of Object.values(pkg.exports)) {

@@ -42,8 +42,8 @@ describe('Button', () => {
   it('supports scoped translations and locale changes without remounting', () => {
     const { rerender } = render(<UIProvider locale="fr" messages={{ loading: 'Chargement' }}><Button loading>Save</Button></UIProvider>);
     expect(screen.getByRole('button', { name: 'Chargement' })).toBeInTheDocument();
-    rerender(<UIProvider locale="ar" direction="rtl" messages={{ loading: 'جار التحميل' }}><Button loading>Save</Button></UIProvider>);
-    expect(screen.getByRole('button', { name: 'جار التحميل' })).toBeInTheDocument();
+    rerender(<UIProvider locale="ml" direction="ltr" messages={{ loading: 'ലോഡ് ചെയ്യുന്നു' }}><Button loading>Save</Button></UIProvider>);
+    expect(screen.getByRole('button', { name: 'ലോഡ് ചെയ്യുന്നു' })).toBeInTheDocument();
   });
 
   it('forwards native props and the DOM ref', () => {

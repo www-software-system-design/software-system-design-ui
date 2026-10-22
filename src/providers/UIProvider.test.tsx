@@ -15,17 +15,22 @@ describe('UIProvider', () => {
 
   it('isolates sibling roots and inherits nested configuration', () => {
     render(<>
-      <UIProvider locale="ar" direction="rtl" theme="dark" messages={{ loading: 'انتظر' }}>
+      <UIProvider locale="ml" direction="ltr" theme="dark" messages={{ loading: 'കാത്തിരിക്കുക' }}>
         <Probe name="parent" />
         <UIProvider theme="light"><Probe name="nested" /></UIProvider>
       </UIProvider>
       <UIProvider><Probe name="sibling" /></UIProvider>
     </>);
-    expect(screen.getByLabelText('parent')).toHaveTextContent('ar|rtl|انتظر');
-    expect(screen.getByLabelText('nested')).toHaveTextContent('ar|rtl|انتظر');
+    expect(screen.getByLabelText('parent')).toHaveTextContent('ml|ltr|കാത്തിരിക്കുക');
+    expect(screen.getByLabelText('nested')).toHaveTextContent('ml|ltr|കാത്തിരിക്കുക');
     expect(screen.getByLabelText('sibling')).toHaveTextContent('en|ltr|Loading');
     expect(screen.getByLabelText('parent').closest('[data-ssd-theme]')).toHaveAttribute('data-ssd-theme', 'dark');
     expect(screen.getByLabelText('nested').closest('[data-ssd-theme]')).toHaveAttribute('data-ssd-theme', 'light');
+  });
+
+  it('keeps explicitly requested RTL independent of the locale', () => {
+    render(<UIProvider locale="ml" direction="rtl"><Probe name="explicit-direction" /></UIProvider>);
+    expect(screen.getByLabelText('explicit-direction')).toHaveTextContent('ml|rtl|Loading');
   });
 
   it('updates explicit theme and retains default messages for missing overrides', () => {

@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import 'component-lib/styles.css';
+import '@software-system.design/ui/styles.css';
 
 export const metadata = { title: 'UI package consumer fixture' };
 

@@ -20,7 +20,7 @@ The foundational Button owns no business state. Its consumer controls `loading` 
 
 ## Themes and messages
 
-Import `component-lib/styles.css` once. `UIProvider` creates a DOM scope and inherits omitted settings from its parent. Supply `theme`, `locale`, and `direction` explicitly when required. Locale does not infer RTL or load translation catalogs automatically. `messages` configures library-owned strings; application content is passed through props/children.
+Import `@software-system.design/ui/styles.css` once. `UIProvider` creates a DOM scope and inherits omitted settings from its parent. Supply `theme`, `locale`, and `direction` explicitly when required. Locale does not infer RTL or load translation catalogs automatically. `messages` configures library-owned strings; application content is passed through props/children.
 
 Use `--ssd-*` variables for deliberate overrides. Place portal containers inside the relevant scope. This scaffold has no overlay component or portal helper yet. Theme preference storage and any pre-hydration bootstrap belong to the MFE; the provider does not read localStorage or mutate the document.
 
@@ -32,4 +32,4 @@ Baselines are scoped by operating system; initial references use Windows Chromiu
 
 ## Release preparation
 
-The current npm identity is provisional and `private: true` prevents accidental publication. Before the first release, confirm name/ownership, license, supported versions, changelog, and versioning/release workflow. No publishing automation is enabled. Runtime is ESM with React 19.3 peers; the tested consumer uses React 19.3.1 and Next.js 16.4.2. Expand compatibility only with corresponding consumer evidence.
+The public npm package is `@software-system.design/ui`, licensed under Apache-2.0 and owned by the `software-system.design` npm organization. Publish through organization owner account `vaniyathans`; the Next.js integration fixture stays private. Follow the [release guide](releases.md) for the initial publication, GitHub Actions trusted publishing, and static Storybook hosting. The release workflow validates the tag, versioned changelog, license, and package settings before running all required checks and publishing the tested tarball. Runtime is ESM with React 19.3 peers; the tested consumer uses React 19.3.1 and Next.js 16.4.2. Expand compatibility only with corresponding consumer evidence.

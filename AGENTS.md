@@ -13,6 +13,7 @@ This repository builds the shared React npm library for software-system.design M
 ## Architecture and component scaffold
 
 - Use one hierarchy: `src/components/{atoms,molecules,organisms,templates}/<kebab-case-name>/`. Use PascalCase implementation/test/story filenames and `index.ts`. Add helpers/styles only when necessary.
+- Read [reference examples](docs/examples.md) for the composition, hook, localization, token, and test patterns before adding another component. Keep story-only data and consumer filtering outside the published runtime.
 - Start with `npm run generate:component -- atoms Example`. Replace its intentionally failing placeholder assertion with the required observable behavior before implementation. Do not ship placeholder components or tests.
 - Lower atomic levels cannot import higher ones; no cycles. Foundations cannot import component layers. Atomic level describes UI responsibility, not hook permissions.
 - Use composition, children, slots, and explicit variants. Avoid duplicate server/client trees, unnecessary abstractions, and collections of boolean switches.

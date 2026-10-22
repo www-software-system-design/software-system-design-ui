@@ -1,0 +1,5 @@
+.ssd-example-results { display: grid; gap: var(--ssd-space-3); margin: 0; padding: 0; list-style: none; }
+.ssd-example-results > li { padding: var(--ssd-space-3); border: 1px solid var(--ssd-color-border); border-radius: var(--ssd-radius-control); }
+.ssd-example-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: var(--ssd-space-4); }
+.ssd-example-swatch { min-block-size: 3rem; border: 1px solid var(--ssd-color-border); border-radius: var(--ssd-radius-control); }
+.ssd-example-token { margin: 0; padding: var(--ssd-space-3); overflow-wrap: anywhere; }

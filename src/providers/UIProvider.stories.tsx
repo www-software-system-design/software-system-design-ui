@@ -21,5 +21,5 @@ export const IsolatedScopes: Story = {
   )
 };
 export const LocalizedLoading: Story = {
-  args: { locale: 'ar', direction: 'rtl', messages: { loading: 'جار التحميل' }, children: <Button loading>Save</Button> }
+  args: { locale: 'ml', direction: 'ltr', messages: { loading: 'ലോഡ് ചെയ്യുന്നു' }, children: <Button loading>Save</Button> }
 };

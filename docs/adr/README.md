@@ -2,7 +2,7 @@
 
 These records capture the architecture discussed for the shared software-system.design UI library used by its microfrontends (MFEs).
 
-The repository now contains a React package scaffold with tests, Storybook, CI configuration, and an unpublished Next.js integration consumer. The owner authorized scaffolding from these decisions. Implementation status is recorded separately in each ADR; publishing remains disabled.
+The repository contains a React package with tests, Storybook, CI configuration, and an unpublished Next.js integration consumer. The owner authorized scaffolding and the initial Apache-2.0 npm release. Implementation and external publication status are recorded separately in the ADRs and release guide.
 
 ## Decision index
 
@@ -18,6 +18,9 @@ The repository now contains a React package scaffold with tests, Storybook, CI c
 | [0008](0008-semantic-tokens-and-default-themes.md) | Semantic tokens and default light/dark themes | Accepted |
 | [0009](0009-packed-package-nextjs-consumer-tests.md) | Packed-package Next.js consumer tests | Accepted |
 | [0010](0010-scaffold-tooling-and-initial-compatibility.md) | Scaffold tooling and initial compatibility | Accepted |
+| [0011](0011-reference-examples-for-every-atomic-layer.md) | Reference examples for every atomic layer | Accepted |
+| [0012](0012-npm-release-and-static-storybook-hosting.md) | npm release tooling and static Storybook hosting | Accepted; owner manages AWS deployment |
+| [0013](0013-short-ui-package-name.md) | Short `@software-system.design/ui` package identity | Accepted |
 
 The owner requested these requirements and subsequently authorized their implementation as the repository scaffold. Future proposals must be distinguished from accepted decisions. A decision status does not by itself establish that its implementation or validation is complete.
 
