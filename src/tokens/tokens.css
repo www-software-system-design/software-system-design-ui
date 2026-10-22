@@ -3,11 +3,19 @@
 [data-ssd-theme='light'],
 [data-ssd-theme='system'] {
   --ssd-color-surface: #ffffff;
-  --ssd-color-text: #182230;
-  --ssd-color-muted: #475467;
+  --ssd-color-background: #f7f9fc;
+  --ssd-color-divider: #dce4ee;
+  --ssd-color-success: #197041;
+  --ssd-color-warning: #855812;
+  --ssd-color-brand-cyan: #00e5ff;
+  --ssd-color-brand-blue: #0055ff;
+  --ssd-color-brand-violet: #881bff;
+  --ssd-color-brand-magenta: #ef26ff;
+  --ssd-color-text: #162339;
+  --ssd-color-muted: #51627b;
   --ssd-color-danger: #b42318;
-  --ssd-color-surface-subtle: #f2f4f7;
-  --ssd-color-action: #1745b8;
+  --ssd-color-surface-subtle: #edf2f9;
+  --ssd-color-action: #245bc2;
   --ssd-color-on-action: #ffffff;
   --ssd-color-border: #667085;
   --ssd-color-focus: #005fcc;
@@ -29,13 +37,17 @@
 }
 
 [data-ssd-theme='dark'] {
-  --ssd-color-surface: #101828;
-  --ssd-color-text: #f2f4f7;
-  --ssd-color-muted: #d0d5dd;
+  --ssd-color-surface: #111927;
+  --ssd-color-background: #090e19;
+  --ssd-color-divider: #2a374b;
+  --ssd-color-success: #84d3a2;
+  --ssd-color-warning: #e5ba73;
+  --ssd-color-text: #eef3fc;
+  --ssd-color-muted: #a4b2c9;
   --ssd-color-danger: #fda29b;
-  --ssd-color-surface-subtle: #1d2939;
-  --ssd-color-action: #a4bcfd;
-  --ssd-color-on-action: #101828;
+  --ssd-color-surface-subtle: #172234;
+  --ssd-color-action: #94baff;
+  --ssd-color-on-action: #111927;
   --ssd-color-border: #98a2b3;
   --ssd-color-focus: #84caff;
 }
@@ -43,13 +55,17 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-ssd-theme='light']),
   [data-ssd-theme='system'] {
-    --ssd-color-surface: #101828;
-    --ssd-color-text: #f2f4f7;
-    --ssd-color-muted: #d0d5dd;
+    --ssd-color-surface: #111927;
+  --ssd-color-background: #090e19;
+  --ssd-color-divider: #2a374b;
+  --ssd-color-success: #84d3a2;
+  --ssd-color-warning: #e5ba73;
+    --ssd-color-text: #eef3fc;
+    --ssd-color-muted: #a4b2c9;
     --ssd-color-danger: #fda29b;
-    --ssd-color-surface-subtle: #1d2939;
-    --ssd-color-action: #a4bcfd;
-    --ssd-color-on-action: #101828;
+    --ssd-color-surface-subtle: #172234;
+    --ssd-color-action: #94baff;
+    --ssd-color-on-action: #111927;
     --ssd-color-border: #98a2b3;
     --ssd-color-focus: #84caff;
   }

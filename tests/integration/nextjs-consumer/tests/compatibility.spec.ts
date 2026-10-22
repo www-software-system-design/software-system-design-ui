@@ -6,6 +6,9 @@ test('produces actual initial HTML without JavaScript', async ({ browser }) => {
   try {
     await page.goto('http://127.0.0.1:3100');
     await expect(page.getByRole('button', { name: 'Imported from package root' })).toBeVisible();
+    await expect(page.getByRole('article',{name:'Content prepared by the server'})).toBeVisible();
+    await expect(page.getByRole('textbox',{name:'Draft title'})).toHaveValue('Server draft');
+    await expect(page.getByRole('table',{name:'Supplied runs'})).toBeVisible();
     await expect(page.getByRole('button', { name: 'Content prepared by the server' })).toBeVisible();
     await expect(page.getByLabel('Count')).toHaveText('0');
     await expect(page.getByRole('button', { name: 'Chargement' })).toBeDisabled();
@@ -13,6 +16,22 @@ test('produces actual initial HTML without JavaScript', async ({ browser }) => {
     await expect(page.getByRole('searchbox', { name: 'Standalone field' })).toHaveAccessibleDescription('Stable label associations from an MFE Server Component.');
     await expect(page.getByRole('region', { name: 'Example component explorer' }).getByRole('status')).toHaveText('3 results');
   } finally { await context.close(); }
+});
+
+test('extracted controlled components hydrate with consumer state',async({page})=>{
+  const errors:string[]=[];
+  page.on('pageerror',error=>errors.push(error.message));
+  page.on('console',message=>{if(message.type()==='error')errors.push(message.text());});
+  await page.goto('/');
+  await page.getByRole('button',{name:'Use light theme'}).click();
+  await expect(page.getByRole('button',{name:'Use dark theme'})).toBeVisible();
+  const pagination=page.getByRole('navigation',{name:'Example pages'});
+  await pagination.getByRole('button',{name:'Next page'}).click();
+  await expect(pagination).toContainText('Page 2 of 2');
+  await expect(pagination.getByRole('button',{name:'Next page'})).toBeDisabled();
+  await page.getByText('More details',{exact:true}).click();
+  await expect(page.locator('details')).toHaveAttribute('open','');
+  expect(errors).toEqual([]);
 });
 
 test('hydrates and updates client-owned state without errors', async ({ page }) => {
@@ -31,8 +50,8 @@ test('loads documented styles and isolates theme and direction scopes', async ({
   await page.goto('/');
   const light = page.getByRole('button', { name: 'Imported from package root' });
   const dark = page.getByRole('button', { name: 'Chargement' });
-  await expect(light).toHaveCSS('background-color', 'rgb(23, 69, 184)');
-  await expect(dark).toHaveCSS('background-color', 'rgb(164, 188, 253)');
+  await expect(light).toHaveCSS('background-color', 'rgb(36, 91, 194)');
+  await expect(dark).toHaveCSS('background-color', 'rgb(148, 186, 255)');
   await expect(page.getByRole('button', { name: 'ലോഡ് ചെയ്യുന്നു' })).toHaveCSS('direction', 'ltr');
 });
 

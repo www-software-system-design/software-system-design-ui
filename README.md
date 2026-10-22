@@ -4,6 +4,11 @@ Shared React component-library scaffold for software-system.design microfrontend
 
 The public npm package is `@software-system.design/ui`, licensed under [Apache-2.0](LICENSE). The first release is version `0.1.0`. The [release guide](docs/releases.md) covers npm publication and static Storybook hosting on Amplify at `storybook.software-system.design`.
 
+The working tree prepares **0.2.0** with fourteen components extracted from the
+informational container and its light/dark brand palette. See the
+[component and migration guide](docs/container-extraction.md). This version has
+not been published by the extraction workflow.
+
 ## Setup
 
 Use Node.js 24 LTS (minimum 22.12) and npm. Run npm ci, then npx playwright install chromium. On PowerShell with script execution disabled, use npm.cmd and npx.cmd. Windows native dependencies require the standard Microsoft Visual C++ runtime; install it through your normal machine setup if a native resolver reports ERR_DLOPEN_FAILED. Linux browser runners may need npx playwright install --with-deps chromium.

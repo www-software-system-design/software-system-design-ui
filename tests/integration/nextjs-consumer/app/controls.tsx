@@ -4,6 +4,16 @@ import { useState } from 'react';
 import { Button } from '@software-system.design/ui/button';
 import { SearchPanel } from '@software-system.design/ui/search-panel';
 import { useControllableState } from '@software-system.design/ui/hooks';
+import {ThemeToggle,Pagination,UIProvider} from '@software-system.design/ui';
+
+export function MarketingControls() {
+  const [theme,setTheme]=useState<'light'|'dark'>('dark');
+  const [page,setPage]=useState(0);
+  return <UIProvider theme={theme}>
+    <ThemeToggle theme={theme} label={`Use ${theme==='dark'?'light':'dark'} theme`} onThemeChange={setTheme}/>
+    <Pagination page={page} pageCount={2} onPageChange={setPage} label="Example pages" previousLabel="Previous page" nextLabel="Next page" pageLabel={`Page ${page+1} of 2`}/>
+  </UIProvider>;
+}
 
 export function Controls() {
   const [count, setCount] = useState(0);

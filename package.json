@@ -1,6 +1,6 @@
 {
   "name": "@software-system.design/ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
   "license": "Apache-2.0",
   "description": "Shared React UI foundations for software-system.design microfrontends",
@@ -62,6 +62,62 @@
     "./hooks": {
       "types": "./dist/hooks/index.d.ts",
       "import": "./dist/hooks/index.js"
+    },
+    "./theme-toggle": {
+      "types": "./dist/components/atoms/theme-toggle/index.d.ts",
+      "import": "./dist/components/atoms/theme-toggle/index.js"
+    },
+    "./badge": {
+      "types": "./dist/components/atoms/badge/index.d.ts",
+      "import": "./dist/components/atoms/badge/index.js"
+    },
+    "./text-area": {
+      "types": "./dist/components/atoms/text-area/index.d.ts",
+      "import": "./dist/components/atoms/text-area/index.js"
+    },
+    "./section-heading": {
+      "types": "./dist/components/molecules/section-heading/index.d.ts",
+      "import": "./dist/components/molecules/section-heading/index.js"
+    },
+    "./content-card": {
+      "types": "./dist/components/molecules/content-card/index.d.ts",
+      "import": "./dist/components/molecules/content-card/index.js"
+    },
+    "./disclosure": {
+      "types": "./dist/components/molecules/disclosure/index.d.ts",
+      "import": "./dist/components/molecules/disclosure/index.js"
+    },
+    "./text-field": {
+      "types": "./dist/components/molecules/text-field/index.d.ts",
+      "import": "./dist/components/molecules/text-field/index.js"
+    },
+    "./pagination": {
+      "types": "./dist/components/molecules/pagination/index.d.ts",
+      "import": "./dist/components/molecules/pagination/index.js"
+    },
+    "./statistic": {
+      "types": "./dist/components/molecules/statistic/index.d.ts",
+      "import": "./dist/components/molecules/statistic/index.js"
+    },
+    "./site-header": {
+      "types": "./dist/components/organisms/site-header/index.d.ts",
+      "import": "./dist/components/organisms/site-header/index.js"
+    },
+    "./site-footer": {
+      "types": "./dist/components/organisms/site-footer/index.d.ts",
+      "import": "./dist/components/organisms/site-footer/index.js"
+    },
+    "./data-table": {
+      "types": "./dist/components/organisms/data-table/index.d.ts",
+      "import": "./dist/components/organisms/data-table/index.js"
+    },
+    "./content-state": {
+      "types": "./dist/components/organisms/content-state/index.d.ts",
+      "import": "./dist/components/organisms/content-state/index.js"
+    },
+    "./marketing-layout": {
+      "types": "./dist/components/templates/marketing-layout/index.d.ts",
+      "import": "./dist/components/templates/marketing-layout/index.js"
     }
   },
   "engines": {

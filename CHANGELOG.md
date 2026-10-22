@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+## 0.2.0
+
+Unreleased; prepared for owner review.
+
+- Extract fourteen atomic React components for navigation, page layouts, cards,
+  headings, disclosures, fields, metrics, records, pagination and async feedback.
+  Add root and deliberate component subpath exports with tests and typed stories.
+- Adopt the container's modern light/dark palette and supplied Storybook branding.
+  Existing semantic-token overrides and English/French/Malayalam catalogs remain compatible.
+- Keep all routing, product content, application data, permissions, business state,
+  persistence and server operations in the container. See
+  [migration guidance](docs/container-extraction.md) for APIs and appearance changes.
+
 ## 0.1.0 - 2026-10-22
 
 - Publish the shorter `@software-system.design/ui@0.1.0` package. Migrate dependency and import prefixes from `@software-system.design/software-system-design-ui`, including CSS imports; component APIs and subpaths are unchanged.

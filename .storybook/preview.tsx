@@ -5,7 +5,7 @@ import './examples/examples.css';
 import { getMessages } from '../src/i18n/index.js';
 
 const preview: Preview = {
-  initialGlobals: { theme: 'light', locale: 'en', direction: 'ltr', viewport: 'wide' },
+  initialGlobals: { theme: 'dark', locale: 'en', direction: 'ltr', viewport: 'wide' },
   globalTypes: {
     theme: { description: 'Color scheme', toolbar: { icon: 'circlehollow', items: ['light', 'dark', 'system'] } },
     locale: { description: 'Language', toolbar: { icon: 'globe', items: ['en', 'fr', 'ml'] } },

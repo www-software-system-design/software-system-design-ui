@@ -19,5 +19,5 @@ export const Palette: Story = {
 };
 export const DarkPalette: Story = { ...Palette, globals: { theme: 'dark' } };
 export const ScopedOverride: Story = {
-  render: () => <UIProvider style={{ '--ssd-color-action': '#6941c6' } as CSSProperties}><Button>Custom action token</Button></UIProvider>
+  render: () => <UIProvider style={{ '--ssd-color-action': '#6941c6', '--ssd-color-on-action': '#ffffff' } as CSSProperties}><Button>Custom action token</Button></UIProvider>
 };

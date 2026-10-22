@@ -27,6 +27,12 @@ function contrast(first: string, second: string): number {
 }
 
 describe.each(['light', 'dark'])('%s semantic tokens', (theme) => {
+  it('uses the container brand surfaces and blue accents', () => {
+    const { container } = render(<div data-ssd-theme={theme} />);
+    const style = getComputedStyle(container.firstElementChild!);
+    expect(style.getPropertyValue('--ssd-color-background').trim()).toBe(theme === 'dark' ? '#090e19' : '#f7f9fc');
+    expect(style.getPropertyValue('--ssd-color-action').trim()).toBe(theme === 'dark' ? '#94baff' : '#245bc2');
+  });
   it('meets AA contrast for active text, muted text, errors, and actions', () => {
     const { container } = render(<div data-ssd-theme={theme} />);
     const style = getComputedStyle(container.firstElementChild!);
