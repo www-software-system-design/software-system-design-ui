@@ -31,61 +31,65 @@ Authenticate as `vaniyathans` and complete npm's browser security check when req
 
 The previously published package [@software-system.design/software-system-design-ui@0.1.0](https://www.npmjs.com/package/@software-system.design/software-system-design-ui/v/0.1.0) was verified on 2026-10-22. It remains a separate registry entry. Migrate by replacing its dependency and every import prefix with `@software-system.design/ui`, including CSS imports. Component APIs and subpaths stay the same. Version 0.1.0 is the initial version for the new package identity.
 
-## Subsequent releases
+## Manual releases
 
-Configure npm trusted publishing for:
+Version **0.2.0** was manually published and publicly verified on 2026-10-23.
+It cannot be published again. Choose a new version for subsequent changes.
 
-Configure these settings on the `@software-system.design/ui` npm package. Trusted publisher settings belong to each package identity separately.
+Publication is local and manual. Pushes and pull requests run the validation-only
+`ci.yml` workflow. There is no npm publishing Action, Git tag creation step, or
+GitHub release creation step. No Git tag or GitHub release is required to publish.
+See [ADR 0016](adr/0016-manual-npm-publication.md).
 
-| Field | Value |
-| --- | --- |
-| GitHub owner | `www-software-system-design` |
-| Repository | `software-system-design-ui` |
-| Workflow filename | `release.yml` |
-| Environment | Leave empty; the workflow does not declare one |
-| Allowed action | `npm publish` |
+1. Use Node 24, install dependencies with `npm.cmd ci`, and install Chromium with
+   `npx.cmd playwright install chromium` if needed. Work from the intended source
+   revision and preserve any unrelated changes.
+2. Inspect existing versions with `npm.cmd view @software-system.design/ui versions --json`.
+   Select an unused version higher than the current latest. Update the manifest
+   and lockfile together using, for example,
+   `npm.cmd version patch --no-git-tag-version`. Choose minor/major as appropriate.
+   This command updates version metadata without creating a commit or Git tag.
+3. Add a matching `## <version>` changelog entry with relevant migration notes.
+   Review and commit the intended release contents before preparing the archive.
+4. Run all validation commands below. Stop on any failure. Review any intentional
+   screenshot differences before accepting baselines. Integration testing creates
+   and installs the exact archive recorded in `.artifacts/package.json`.
+5. Authenticate locally with `npm.cmd login --registry https://registry.npmjs.org/`
+   if needed, and verify the publishing account using
+   `npm.cmd whoami --registry https://registry.npmjs.org/`.
+6. Publish that tested archive using the separate publication command below.
+   Complete npm's browser security check when requested. Do not share credentials.
+7. Wait for npm processing, then verify the exact version and the `latest` npm
+   dist-tag. Compare the registry's SHA-512 integrity and an anonymously downloaded
+   archive against the tested tarball before reporting it available. A successful
+   CLI exit alone does not establish public availability. If a version was
+   accepted but is still processing, verify it before attempting publication again.
 
-The workflow uses GitHub-hosted Windows runners for the reviewed visual baselines, Node 24, and npm 11.19.0. It grants `id-token: write` to the publishing job and publishes the tarball tested by the packed Next.js consumer. No npm write token is stored in GitHub. See [npm trusted publishing](https://docs.npmjs.com/trusted-publishers/).
+Validation (each failed command stops this PowerShell sequence):
 
-Pushes to **main** now run **Publish npm package** automatically. The version in
-`package.json` controls the release; the workflow does not increment versions or
-write commits back to main. For a new release:
+```powershell
+$checks = 'check:release', 'check', 'test:stories', 'build:storybook', 'test:visual', 'test:integration'
+foreach ($check in $checks) {
+  npm.cmd run $check
+  if ($LASTEXITCODE -ne 0) { throw "Validation failed: $check" }
+}
+```
 
-1. Update the manifest and lockfile together, for example with
-   `npm.cmd version patch --no-git-tag-version` (choose minor/major when appropriate).
-2. Add a matching `## <version>` changelog entry describing the release and migration.
-3. Commit those updates with the implementation and push/merge to main.
+Publication, after successful validation and authentication:
 
-The workflow pins the triggering commit SHA, validates release metadata, and runs
-all repository, story, visual and packed-consumer checks. It then creates
-`v<version>` at that exact commit, publishes the tested tarball to npm with
-provenance, checks registry SHA-512 integrity, and creates the GitHub release from
-that version's changelog section. Stable versions publish to npm's `latest` tag.
-Prereleases, version downgrades and moving existing tags are rejected.
+```powershell
+$artifact = Get-Content -LiteralPath .artifacts/package.json -Raw | ConvertFrom-Json
+npm.cmd publish $artifact.tarball --access public --registry https://registry.npmjs.org/
+if ($LASTEXITCODE -ne 0) { throw 'npm publication failed' }
+$package = Get-Content -LiteralPath package.json -Raw | ConvertFrom-Json
+npm.cmd view "$($package.name)@$($package.version)" version dist.integrity --registry https://registry.npmjs.org/
+npm.cmd view $package.name dist-tags --json --registry https://registry.npmjs.org/
+```
 
-If npm, the tag and GitHub release already exist, later pushes with that same
-version skip release work; ordinary CI still validates the changes. Bump the
-version to ship further code changes. The initial push containing this workflow
-is eligible to release the manifest's version if it is new on npm.
-
-For a transient failure, use **Re-run failed jobs** on the original Actions run.
-A created tag is reused only for the original commit. If npm publication succeeded
-but GitHub release creation failed, retrying verifies npm integrity and creates
-the missing GitHub release without republishing. If main has advanced while a
-release is incomplete, rerun the original run rather than moving its tag. The
-**Run workflow** button remains available for main without a tag input.
-
-The job requests `contents: write` for tags/releases and `id-token: write` for npm.
-Ensure repository tag rules permit the release workflow and that the npm trusted
-publisher above is configured; no personal access token or npm write token is
-required. Runs are serialized with a bounded pending queue and do not cancel a
-release already running. Workflow-created tags do not need to trigger a second
-workflow: npm and GitHub publication happen in this same run. See
-[GitHub concurrency](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency)
-and [release API](https://docs.github.com/en/rest/releases/releases).
-
-See [ADR 0015](adr/0015-automatic-main-releases.md). This supersedes the previous
-manual tagged-release procedure; historical publication records remain unchanged.
+Existing tags, GitHub releases, and historical publication records remain intact.
+No external npm account or trusted-publisher settings are changed by removing
+repository automation. Stop any old release job still running in GitHub before a
+manual publication; removing its workflow does not cancel an in-progress run.
 
 ## Storybook under software-system.design
 

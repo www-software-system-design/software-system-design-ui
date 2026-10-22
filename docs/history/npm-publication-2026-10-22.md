@@ -1,5 +1,9 @@
 # History: from the Next.js starter to a published React UI package
 
+The workflow preparation described here is historical. On 2026-10-23 the owner
+replaced publishing automation with local manual publication; use the current
+[release guide](../releases.md) and [ADR 0016](../adr/0016-manual-npm-publication.md).
+
 Recorded publication date: **22 October 2026**. Final package: **[@software-system.design/ui@0.1.0](https://www.npmjs.com/package/@software-system.design/ui/v/0.1.0)**. Organization: `software-system.design`. Publishing account: `vaniyathans`. License: Apache-2.0.
 
 This is a history of the work performed, including preparation, failed attempts, corrections, authentication, publication, and verification. It is not an architecture decision record. Earlier scaffold work is described from the initial Git manifest, repository scripts, and recorded scaffold evidence; the publication sequence and results were observed during this conversation. Commands inside the build and integration scripts are expanded below so their individual steps are visible. This document does not claim to be a complete terminal transcript or invent missing original scaffold commands.

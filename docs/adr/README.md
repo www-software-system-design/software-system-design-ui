@@ -19,10 +19,11 @@ The repository contains a React package with tests, Storybook, CI configuration,
 | [0009](0009-packed-package-nextjs-consumer-tests.md) | Packed-package Next.js consumer tests | Accepted |
 | [0010](0010-scaffold-tooling-and-initial-compatibility.md) | Scaffold tooling and initial compatibility | Accepted |
 | [0011](0011-reference-examples-for-every-atomic-layer.md) | Reference examples for every atomic layer | Accepted |
-| [0012](0012-npm-release-and-static-storybook-hosting.md) | npm release tooling and static Storybook hosting | Accepted; owner manages AWS deployment |
+| [0012](0012-npm-release-and-static-storybook-hosting.md) | npm release tooling and static Storybook hosting | Publication superseded by 0016; hosting accepted |
 | [0013](0013-short-ui-package-name.md) | Short `@software-system.design/ui` package identity | Accepted |
 | [0014](0014-container-components-and-brand.md) | Container presentation extraction and shared branding | Accepted for implementation |
-| [0015](0015-automatic-main-releases.md) | Automatic versioned npm and GitHub releases from main | Accepted |
+| [0015](0015-automatic-main-releases.md) | Automatic versioned npm and GitHub releases from main | Superseded by 0016 |
+| [0016](0016-manual-npm-publication.md) | Manual npm publication and validation-only CI | Accepted |
 
 The owner requested these requirements and subsequently authorized their implementation as the repository scaffold. Future proposals must be distinguished from accepted decisions. A decision status does not by itself establish that its implementation or validation is complete.
 

@@ -20,29 +20,29 @@ test('publishes with the short ui name under the software-system.design organiza
 });
 
 test('rejects publication to the former personal package name', () => {
-  assert.throws(() => assertReleaseReady({ ...candidate, name: 'software-system-design-ui' }, license, changelog, 'v0.1.0'), /package name/);
+  assert.throws(() => assertReleaseReady({ ...candidate, name: 'software-system-design-ui' }, license, changelog), /package name/);
 });
 
 test('rejects publication under the former long organization package name', () => {
-  assert.throws(() => assertReleaseReady({ ...candidate, name: '@software-system.design/software-system-design-ui' }, license, changelog, 'v0.1.0'), /package name/);
+  assert.throws(() => assertReleaseReady({ ...candidate, name: '@software-system.design/software-system-design-ui' }, license, changelog), /package name/);
 });
 
-test('allows a licensed public release whose tag matches the manifest and changelog', () => {
-  assert.doesNotThrow(() => assertReleaseReady(candidate, license, changelog, 'v0.1.0'));
+test('allows a licensed manual publication with versioned notes and no Git tag', () => {
+  assert.doesNotThrow(() => assertReleaseReady(candidate, license, changelog));
 });
 
 test('rejects private packages and missing or unpublished license decisions', () => {
-  assert.throws(() => assertReleaseReady({ ...candidate, private: true }, license, changelog, 'v0.1.0'), /private/);
+  assert.throws(() => assertReleaseReady({ ...candidate, private: true }, license, changelog), /private/);
   for (const value of [undefined, '', 'UNLICENSED']) {
-    assert.throws(() => assertReleaseReady({ ...candidate, license: value }, license, changelog, 'v0.1.0'), /license/);
+    assert.throws(() => assertReleaseReady({ ...candidate, license: value }, license, changelog), /license/);
   }
-  assert.throws(() => assertReleaseReady(candidate, '', changelog, 'v0.1.0'), /LICENSE/);
+  assert.throws(() => assertReleaseReady(candidate, '', changelog), /LICENSE/);
 });
 
-test('rejects mismatched tags, missing release notes, and unintended registry targets', () => {
-  assert.throws(() => assertReleaseReady(candidate, license, changelog, 'v0.2.0'), /tag/);
-  assert.throws(() => assertReleaseReady(candidate, license, '# Changelog\n## Unreleased', 'v0.1.0'), /changelog/);
-  assert.throws(() => assertReleaseReady({ ...candidate, publishConfig: {} }, license, changelog, 'v0.1.0'), /registry/);
+test('rejects unstable versions, missing release notes, and unintended registry targets', () => {
+  assert.throws(() => assertReleaseReady({ ...candidate, version: '0.2.0-beta.1' }, license, changelog), /stable/);
+  assert.throws(() => assertReleaseReady(candidate, license, '# Changelog\n## Unreleased'), /changelog/);
+  assert.throws(() => assertReleaseReady({ ...candidate, publishConfig: {} }, license, changelog), /registry/);
 });
 
 test('the npm artifact identifies its source, issue tracker, and public registry', () => {
@@ -66,7 +66,7 @@ test('the first public release carries the agreed Apache-2.0 license while its c
   assert.match(license, /Apache License/);
   assert.match(license, /Version 2\.0, January 2004/);
   assert.match(license, /END OF TERMS AND CONDITIONS/);
-  assertReleaseReady(pkg, license, readFileSync(new URL('../CHANGELOG.md', import.meta.url), 'utf8'), `v${pkg.version}`);
+  assertReleaseReady(pkg, license, readFileSync(new URL('../CHANGELOG.md', import.meta.url), 'utf8'));
   const consumer = JSON.parse(readFileSync(new URL('../tests/integration/nextjs-consumer/package.json', import.meta.url), 'utf8'));
   assert.equal(consumer.private, true);
 });

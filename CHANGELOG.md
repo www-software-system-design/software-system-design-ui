@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Remove automated npm publication, Git tagging and GitHub release creation.
+  Keep validation-only CI and local publication checks; follow the manual
+  [release procedure](docs/releases.md). Git tags are no longer required.
+
 ## 0.2.0
 
 - Automatically validate and release new manifest versions on main pushes: create

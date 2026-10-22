@@ -1,7 +1,7 @@
 # ADR 0015: Automatic versioned releases from main
 
 - Date: 2026-10-22
-- Status: Accepted at the owner's request.
+- Status: Superseded on 2026-10-23 by [ADR 0016](0016-manual-npm-publication.md), at the owner's request. The automation described below has been removed.
 - Supersedes: the manual dispatch/tagging part of [ADR 0012](0012-npm-release-and-static-storybook-hosting.md).
 
 ## Context

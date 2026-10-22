@@ -31,6 +31,7 @@ This repository builds the shared React npm library for software-system.design M
 - `npm run lint` enforces component artifacts, atomic dependency direction, cycles, and accessibility/hook lint rules. Passing checks do not prove TDD history or full accessibility compliance.
 - The Next.js consumer installs the actual npm tarball. Never replace it with source aliases, workspace links, or a linked build directory. Its Server Components are tests, excluded from publication.
 - Material architecture changes require an ADR with alternatives and migration impact. Public API changes need appropriate versioning, changelog entries, and migration guidance. The package name/publication policy must be finalized before the first release; keep the publication guard until then.
+- npm publication is manual through an authenticated maintainer. CI only validates; do not add automated npm publication, Git tagging, or GitHub release creation. Follow [the manual release guide](docs/releases.md) and [ADR 0016](docs/adr/0016-manual-npm-publication.md).
 - Do not add a runtime dependency or restructure the package merely to implement one component. Explain justified architectural changes with their consumer impact.
 
 <!-- BEGIN:nextjs-agent-rules -->

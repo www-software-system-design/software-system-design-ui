@@ -6,8 +6,9 @@ The public npm package is `@software-system.design/ui`, licensed under [Apache-2
 
 Version **0.2.0** adds fourteen components extracted from the informational
 container and its light/dark brand palette. See the
-[component and migration guide](docs/container-extraction.md). Main pushes
-automatically release new manifest versions after validation; see the release guide.
+[component and migration guide](docs/container-extraction.md). npm publication is
+manual; pushes run CI checks without publishing packages or creating Git tags or
+GitHub releases. Follow the release guide to publish a tested archive locally.
 
 ## Setup
 
