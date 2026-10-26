@@ -5,6 +5,21 @@ import { Button } from '@software-system.design/ui/button';
 import { SearchPanel } from '@software-system.design/ui/search-panel';
 import { useControllableState } from '@software-system.design/ui/hooks';
 import {ThemeToggle,Pagination,UIProvider} from '@software-system.design/ui';
+import {Tabs} from '@software-system.design/ui/tabs';
+import {Dialog} from '@software-system.design/ui/dialog';
+import {Switch} from '@software-system.design/ui/switch';
+
+export function ReferenceControls(){
+  const [open,setOpen]=useState(false);
+  const [enabled,setEnabled]=useState(false);
+  return <UIProvider theme="dark" locale="fr" direction="rtl" messages={{close:'Fermer'}}>
+    <Switch label="Reference notifications" checked={enabled} onChange={event=>setEnabled(event.currentTarget.checked)}/>
+    <output aria-label="Notification preference">{enabled?'Enabled':'Disabled'}</output>
+    <Tabs label="Reference panels" items={[{value:'first',label:'Reference one',content:<p>First reference panel</p>},{value:'second',label:'Reference two',content:<p>Second reference panel</p>}]}/>
+    <Button onClick={()=>setOpen(true)}>Open reference dialog</Button>
+    <Dialog open={open} onOpenChange={setOpen} title="Reference dialog"><p>Inherits its MFE scope.</p></Dialog>
+  </UIProvider>;
+}
 
 export function MarketingControls() {
   const [theme,setTheme]=useState<'light'|'dark'>('dark');

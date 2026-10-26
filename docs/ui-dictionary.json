@@ -1,0 +1,1717 @@
+{
+  "schemaVersion": 1,
+  "scope": "Web React controls for software-system.design MFEs",
+  "categories": [
+    "Actions",
+    "Forms",
+    "Navigation",
+    "Feedback",
+    "Overlays",
+    "Content",
+    "Data display",
+    "Layout"
+  ],
+  "entries": [
+    {
+      "id": "avatar",
+      "name": "Avatar",
+      "category": "Content",
+      "kind": "component",
+      "component": "Avatar",
+      "subpath": "avatar",
+      "purpose": "Named image or initials fallback.",
+      "aliases": [
+        "avatar",
+        "profile image"
+      ],
+      "story": "controls-content-avatar--default",
+      "source": "src/components/atoms/avatar/Avatar.tsx",
+      "storyFile": "src/components/atoms/avatar/Avatar.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "badge",
+      "name": "Badge",
+      "category": "Content",
+      "kind": "component",
+      "component": "Badge",
+      "subpath": "badge",
+      "purpose": "A short visible status or classification label.",
+      "aliases": [
+        "badge",
+        "tag",
+        "chip"
+      ],
+      "story": "atoms-badge--default",
+      "source": "src/components/atoms/badge/Badge.tsx",
+      "storyFile": "src/components/atoms/badge/Badge.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "button",
+      "name": "Button",
+      "category": "Actions",
+      "kind": "component",
+      "component": "Button",
+      "subpath": "button",
+      "purpose": "Trigger a command or submit a form.",
+      "aliases": [
+        "button",
+        "submit",
+        "reset",
+        "icon button",
+        "CTA"
+      ],
+      "story": "atoms-button--primary",
+      "source": "src/components/atoms/button/Button.tsx",
+      "storyFile": "src/components/atoms/button/Button.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "link",
+      "name": "Link",
+      "category": "Actions",
+      "kind": "component",
+      "component": "Link",
+      "subpath": "link",
+      "purpose": "Navigate through a real hyperlink.",
+      "aliases": [
+        "anchor",
+        "hyperlink"
+      ],
+      "story": "controls-actions-link--default",
+      "source": "src/components/atoms/link/Link.tsx",
+      "storyFile": "src/components/atoms/link/Link.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "meter",
+      "name": "Meter",
+      "category": "Feedback",
+      "kind": "component",
+      "component": "Meter",
+      "subpath": "meter",
+      "purpose": "A native bounded measurement, distinct from task progress.",
+      "aliases": [
+        "meter",
+        "gauge",
+        "measurement"
+      ],
+      "story": "controls-feedback-meter--default",
+      "source": "src/components/atoms/meter/Meter.tsx",
+      "storyFile": "src/components/atoms/meter/Meter.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "progress-bar",
+      "name": "ProgressBar",
+      "category": "Feedback",
+      "kind": "component",
+      "component": "ProgressBar",
+      "subpath": "progress-bar",
+      "purpose": "Native determinate or indeterminate task completion.",
+      "aliases": [
+        "progress",
+        "progressbar"
+      ],
+      "story": "controls-feedback-progressbar--default",
+      "source": "src/components/atoms/progress-bar/ProgressBar.tsx",
+      "storyFile": "src/components/atoms/progress-bar/ProgressBar.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "separator",
+      "name": "Separator",
+      "category": "Content",
+      "kind": "component",
+      "component": "Separator",
+      "subpath": "separator",
+      "purpose": "A semantic horizontal or vertical divider.",
+      "aliases": [
+        "divider",
+        "rule"
+      ],
+      "story": "controls-content-separator--default",
+      "source": "src/components/atoms/separator/Separator.tsx",
+      "storyFile": "src/components/atoms/separator/Separator.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "skeleton",
+      "name": "Skeleton",
+      "category": "Feedback",
+      "kind": "component",
+      "component": "Skeleton",
+      "subpath": "skeleton",
+      "purpose": "Decorative loading placeholders without duplicate announcements.",
+      "aliases": [
+        "placeholder",
+        "shimmer"
+      ],
+      "story": "controls-feedback-skeleton--default",
+      "source": "src/components/atoms/skeleton/Skeleton.tsx",
+      "storyFile": "src/components/atoms/skeleton/Skeleton.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "spinner",
+      "name": "Spinner",
+      "category": "Feedback",
+      "kind": "component",
+      "component": "Spinner",
+      "subpath": "spinner",
+      "purpose": "Named indeterminate loading status.",
+      "aliases": [
+        "busy",
+        "loading indicator"
+      ],
+      "story": "controls-feedback-spinner--default",
+      "source": "src/components/atoms/spinner/Spinner.tsx",
+      "storyFile": "src/components/atoms/spinner/Spinner.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "text-area",
+      "name": "TextArea",
+      "category": "Forms",
+      "kind": "component",
+      "component": "TextArea",
+      "subpath": "text-area",
+      "purpose": "Native multiline entry; supply an associated visible label.",
+      "aliases": [
+        "textarea",
+        "multiline"
+      ],
+      "story": "atoms-textarea--default",
+      "source": "src/components/atoms/text-area/TextArea.tsx",
+      "storyFile": "src/components/atoms/text-area/TextArea.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "text-input",
+      "name": "TextInput",
+      "category": "Forms",
+      "kind": "component",
+      "component": "TextInput",
+      "subpath": "text-input",
+      "purpose": "Low-level text, email, URL, telephone, search or password input.",
+      "aliases": [
+        "textbox",
+        "input"
+      ],
+      "story": "atoms-text-input--default",
+      "source": "src/components/atoms/text-input/TextInput.tsx",
+      "storyFile": "src/components/atoms/text-input/TextInput.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "theme-toggle",
+      "name": "ThemeToggle",
+      "category": "Actions",
+      "kind": "component",
+      "component": "ThemeToggle",
+      "subpath": "theme-toggle",
+      "purpose": "Consumer-owned light/dark theme action.",
+      "aliases": [
+        "theme",
+        "dark mode"
+      ],
+      "story": "atoms-themetoggle--default",
+      "source": "src/components/atoms/theme-toggle/ThemeToggle.tsx",
+      "storyFile": "src/components/atoms/theme-toggle/ThemeToggle.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "toggle-button",
+      "name": "ToggleButton",
+      "category": "Actions",
+      "kind": "component",
+      "component": "ToggleButton",
+      "subpath": "toggle-button",
+      "purpose": "A persistent pressed/unpressed action.",
+      "aliases": [
+        "toggle",
+        "segmented action",
+        "formatting"
+      ],
+      "story": "controls-actions-togglebutton--default",
+      "source": "src/components/atoms/toggle-button/ToggleButton.tsx",
+      "storyFile": "src/components/atoms/toggle-button/ToggleButton.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "alert",
+      "name": "Alert",
+      "category": "Feedback",
+      "kind": "component",
+      "component": "Alert",
+      "subpath": "alert",
+      "purpose": "Polite feedback by default, with explicit assertive urgency.",
+      "aliases": [
+        "alert",
+        "banner",
+        "notification",
+        "status"
+      ],
+      "story": "controls-feedback-alert--default",
+      "source": "src/components/molecules/alert/Alert.tsx",
+      "storyFile": "src/components/molecules/alert/Alert.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "autocomplete",
+      "name": "Autocomplete",
+      "category": "Forms",
+      "kind": "component",
+      "component": "Autocomplete",
+      "subpath": "autocomplete",
+      "purpose": "Native datalist suggestions with free-text entry.",
+      "aliases": [
+        "autocomplete",
+        "combobox",
+        "typeahead"
+      ],
+      "story": "controls-forms-autocomplete--default",
+      "source": "src/components/molecules/autocomplete/Autocomplete.tsx",
+      "storyFile": "src/components/molecules/autocomplete/Autocomplete.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "breadcrumbs",
+      "name": "Breadcrumbs",
+      "category": "Navigation",
+      "kind": "component",
+      "component": "Breadcrumbs",
+      "subpath": "breadcrumbs",
+      "purpose": "A named location trail with a current-page marker.",
+      "aliases": [
+        "breadcrumb",
+        "location",
+        "path"
+      ],
+      "story": "controls-navigation-breadcrumbs--default",
+      "source": "src/components/molecules/breadcrumbs/Breadcrumbs.tsx",
+      "storyFile": "src/components/molecules/breadcrumbs/Breadcrumbs.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "checkbox",
+      "name": "Checkbox",
+      "category": "Forms",
+      "kind": "component",
+      "component": "Checkbox",
+      "subpath": "checkbox",
+      "purpose": "An independent boolean choice, optionally mixed.",
+      "aliases": [
+        "check box",
+        "tri-state"
+      ],
+      "story": "controls-forms-checkbox--default",
+      "source": "src/components/molecules/checkbox/Checkbox.tsx",
+      "storyFile": "src/components/molecules/checkbox/Checkbox.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "content-card",
+      "name": "ContentCard",
+      "category": "Content",
+      "kind": "component",
+      "component": "ContentCard",
+      "subpath": "content-card",
+      "purpose": "A reusable content container with caller-owned actions.",
+      "aliases": [
+        "card",
+        "panel"
+      ],
+      "story": "molecules-contentcard--default",
+      "source": "src/components/molecules/content-card/ContentCard.tsx",
+      "storyFile": "src/components/molecules/content-card/ContentCard.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "disclosure",
+      "name": "Disclosure",
+      "category": "Content",
+      "kind": "component",
+      "component": "Disclosure",
+      "subpath": "disclosure",
+      "purpose": "A native expandable details section.",
+      "aliases": [
+        "details",
+        "disclosure",
+        "expand",
+        "collapse"
+      ],
+      "story": "molecules-disclosure--default",
+      "source": "src/components/molecules/disclosure/Disclosure.tsx",
+      "storyFile": "src/components/molecules/disclosure/Disclosure.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "fieldset",
+      "name": "Fieldset",
+      "category": "Forms",
+      "kind": "component",
+      "component": "Fieldset",
+      "subpath": "fieldset",
+      "purpose": "Native form grouping and legend; can disable descendants.",
+      "aliases": [
+        "form group",
+        "legend",
+        "radio group"
+      ],
+      "story": "controls-forms-fieldset--default",
+      "source": "src/components/molecules/fieldset/Fieldset.tsx",
+      "storyFile": "src/components/molecules/fieldset/Fieldset.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "file-upload",
+      "name": "FileUpload",
+      "category": "Forms",
+      "kind": "component",
+      "component": "FileUpload",
+      "subpath": "file-upload",
+      "purpose": "Native local file selection; the application owns uploads.",
+      "aliases": [
+        "attachment",
+        "file picker",
+        "upload"
+      ],
+      "story": "controls-forms-fileupload--default",
+      "source": "src/components/molecules/file-upload/FileUpload.tsx",
+      "storyFile": "src/components/molecules/file-upload/FileUpload.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "native-field",
+      "name": "NativeField",
+      "category": "Forms",
+      "kind": "component",
+      "component": "NativeField",
+      "subpath": "native-field",
+      "purpose": "Native numeric, date, time, month, week, color, range and file inputs.",
+      "aliases": [
+        "number",
+        "spinbutton",
+        "date",
+        "time",
+        "color",
+        "picker"
+      ],
+      "story": "controls-forms-nativefield--default",
+      "source": "src/components/molecules/native-field/NativeField.tsx",
+      "storyFile": "src/components/molecules/native-field/NativeField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "pagination",
+      "name": "Pagination",
+      "category": "Navigation",
+      "kind": "component",
+      "component": "Pagination",
+      "subpath": "pagination",
+      "purpose": "Consumer-owned page navigation.",
+      "aliases": [
+        "pager",
+        "pages"
+      ],
+      "story": "molecules-pagination--default",
+      "source": "src/components/molecules/pagination/Pagination.tsx",
+      "storyFile": "src/components/molecules/pagination/Pagination.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "radio-button",
+      "name": "RadioButton",
+      "category": "Forms",
+      "kind": "component",
+      "component": "RadioButton",
+      "subpath": "radio-button",
+      "purpose": "One choice within a native named radio group.",
+      "aliases": [
+        "radio",
+        "option button"
+      ],
+      "story": "controls-forms-radiobutton--default",
+      "source": "src/components/molecules/radio-button/RadioButton.tsx",
+      "storyFile": "src/components/molecules/radio-button/RadioButton.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "range-field",
+      "name": "RangeField",
+      "category": "Forms",
+      "kind": "component",
+      "component": "RangeField",
+      "subpath": "range-field",
+      "purpose": "A native single-thumb numeric slider.",
+      "aliases": [
+        "slider",
+        "range"
+      ],
+      "story": "controls-forms-rangefield--default",
+      "source": "src/components/molecules/range-field/RangeField.tsx",
+      "storyFile": "src/components/molecules/range-field/RangeField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "search-field",
+      "name": "SearchField",
+      "category": "Forms",
+      "kind": "component",
+      "component": "SearchField",
+      "subpath": "search-field",
+      "purpose": "Text search with a clear action and controlled/default values.",
+      "aliases": [
+        "search",
+        "searchbox"
+      ],
+      "story": "molecules-search-field--uncontrolled",
+      "source": "src/components/molecules/search-field/SearchField.tsx",
+      "storyFile": "src/components/molecules/search-field/SearchField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "section-heading",
+      "name": "SectionHeading",
+      "category": "Content",
+      "kind": "component",
+      "component": "SectionHeading",
+      "subpath": "section-heading",
+      "purpose": "A semantic section title and supporting copy.",
+      "aliases": [
+        "heading",
+        "title",
+        "eyebrow"
+      ],
+      "story": "molecules-sectionheading--default",
+      "source": "src/components/molecules/section-heading/SectionHeading.tsx",
+      "storyFile": "src/components/molecules/section-heading/SectionHeading.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "select-field",
+      "name": "SelectField",
+      "category": "Forms",
+      "kind": "component",
+      "component": "SelectField",
+      "subpath": "select-field",
+      "purpose": "Native single selection or multiple selection listbox.",
+      "aliases": [
+        "dropdown",
+        "select",
+        "listbox",
+        "multiselect"
+      ],
+      "story": "controls-forms-selectfield--default",
+      "source": "src/components/molecules/select-field/SelectField.tsx",
+      "storyFile": "src/components/molecules/select-field/SelectField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "statistic",
+      "name": "Statistic",
+      "category": "Data display",
+      "kind": "component",
+      "component": "Statistic",
+      "subpath": "statistic",
+      "purpose": "A named metric with consumer-formatted values.",
+      "aliases": [
+        "statistic",
+        "KPI",
+        "metric"
+      ],
+      "story": "molecules-statistic--default",
+      "source": "src/components/molecules/statistic/Statistic.tsx",
+      "storyFile": "src/components/molecules/statistic/Statistic.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "switch",
+      "name": "Switch",
+      "category": "Forms",
+      "kind": "component",
+      "component": "Switch",
+      "subpath": "switch",
+      "purpose": "A native checkbox presented as an on/off switch.",
+      "aliases": [
+        "toggle switch",
+        "on off"
+      ],
+      "story": "controls-forms-switch--default",
+      "source": "src/components/molecules/switch/Switch.tsx",
+      "storyFile": "src/components/molecules/switch/Switch.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "text-field",
+      "name": "TextField",
+      "category": "Forms",
+      "kind": "component",
+      "component": "TextField",
+      "subpath": "text-field",
+      "purpose": "A text input with a visible label, hint and error.",
+      "aliases": [
+        "email",
+        "password",
+        "telephone",
+        "url"
+      ],
+      "story": "molecules-textfield--default",
+      "source": "src/components/molecules/text-field/TextField.tsx",
+      "storyFile": "src/components/molecules/text-field/TextField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "tooltip",
+      "name": "Tooltip",
+      "category": "Overlays",
+      "kind": "component",
+      "component": "Tooltip",
+      "subpath": "tooltip",
+      "purpose": "Noninteractive supplementary text on hover or focus, dismissible by Escape.",
+      "aliases": [
+        "tooltip",
+        "help tip"
+      ],
+      "story": "controls-overlays-tooltip--default",
+      "source": "src/components/molecules/tooltip/Tooltip.tsx",
+      "storyFile": "src/components/molecules/tooltip/Tooltip.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "accordion",
+      "name": "Accordion",
+      "category": "Content",
+      "kind": "component",
+      "component": "Accordion",
+      "subpath": "accordion",
+      "purpose": "A named set of independent native disclosures.",
+      "aliases": [
+        "accordion",
+        "FAQ"
+      ],
+      "story": "controls-content-accordion--default",
+      "source": "src/components/organisms/accordion/Accordion.tsx",
+      "storyFile": "src/components/organisms/accordion/Accordion.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "content-state",
+      "name": "ContentState",
+      "category": "Feedback",
+      "kind": "component",
+      "component": "ContentState",
+      "subpath": "content-state",
+      "purpose": "Loading, empty and error presentation with caller actions.",
+      "aliases": [
+        "empty state",
+        "error state",
+        "loading"
+      ],
+      "story": "organisms-contentstate--default",
+      "source": "src/components/organisms/content-state/ContentState.tsx",
+      "storyFile": "src/components/organisms/content-state/ContentState.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "data-chart",
+      "name": "DataChart",
+      "category": "Data display",
+      "kind": "component",
+      "component": "DataChart",
+      "subpath": "data-chart",
+      "purpose": "Fifteen native SVG chart variants with complete visible data tables.",
+      "aliases": [
+        "chart",
+        "visualization",
+        "graph"
+      ],
+      "story": "data-visualization-overview--default",
+      "source": "src/components/organisms/data-chart/DataChart.tsx",
+      "storyFile": "src/components/organisms/data-chart/DataChart.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "data-table",
+      "name": "DataTable",
+      "category": "Data display",
+      "kind": "component",
+      "component": "DataTable",
+      "subpath": "data-table",
+      "purpose": "A native semantic data table with a keyboard-scrollable region.",
+      "aliases": [
+        "table",
+        "records"
+      ],
+      "story": "organisms-datatable--default",
+      "source": "src/components/organisms/data-table/DataTable.tsx",
+      "storyFile": "src/components/organisms/data-table/DataTable.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "dialog",
+      "name": "Dialog",
+      "category": "Overlays",
+      "kind": "component",
+      "component": "Dialog",
+      "subpath": "dialog",
+      "purpose": "Controlled native modal dialog kept inside the UI scope.",
+      "aliases": [
+        "modal",
+        "confirmation dialog"
+      ],
+      "story": "controls-overlays-dialog--default",
+      "source": "src/components/organisms/dialog/Dialog.tsx",
+      "storyFile": "src/components/organisms/dialog/Dialog.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "search-panel",
+      "name": "SearchPanel",
+      "category": "Data display",
+      "kind": "component",
+      "component": "SearchPanel",
+      "subpath": "search-panel",
+      "purpose": "Consumer-owned search and result/request feedback.",
+      "aliases": [
+        "results",
+        "filter"
+      ],
+      "story": "organisms-search-panel--interactive",
+      "source": "src/components/organisms/search-panel/SearchPanel.tsx",
+      "storyFile": "src/components/organisms/search-panel/SearchPanel.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "site-footer",
+      "name": "SiteFooter",
+      "category": "Navigation",
+      "kind": "component",
+      "component": "SiteFooter",
+      "subpath": "site-footer",
+      "purpose": "Footer content and consumer-owned navigation.",
+      "aliases": [
+        "footer"
+      ],
+      "story": "organisms-sitefooter--default",
+      "source": "src/components/organisms/site-footer/SiteFooter.tsx",
+      "storyFile": "src/components/organisms/site-footer/SiteFooter.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "site-header",
+      "name": "SiteHeader",
+      "category": "Navigation",
+      "kind": "component",
+      "component": "SiteHeader",
+      "subpath": "site-header",
+      "purpose": "Responsive branded navigation with caller-owned links.",
+      "aliases": [
+        "header",
+        "navbar",
+        "app bar"
+      ],
+      "story": "organisms-siteheader--default",
+      "source": "src/components/organisms/site-header/SiteHeader.tsx",
+      "storyFile": "src/components/organisms/site-header/SiteHeader.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "tabs",
+      "name": "Tabs",
+      "category": "Navigation",
+      "kind": "component",
+      "component": "Tabs",
+      "subpath": "tabs",
+      "purpose": "Layered panels with automatic activation and arrow navigation.",
+      "aliases": [
+        "tab list",
+        "tab panel"
+      ],
+      "story": "controls-navigation-tabs--default",
+      "source": "src/components/organisms/tabs/Tabs.tsx",
+      "storyFile": "src/components/organisms/tabs/Tabs.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "toolbar",
+      "name": "Toolbar",
+      "category": "Actions",
+      "kind": "component",
+      "component": "Toolbar",
+      "subpath": "toolbar",
+      "purpose": "A named group of buttons with roving keyboard focus.",
+      "aliases": [
+        "tool bar",
+        "command bar"
+      ],
+      "story": "controls-actions-toolbar--default",
+      "source": "src/components/organisms/toolbar/Toolbar.tsx",
+      "storyFile": "src/components/organisms/toolbar/Toolbar.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "explorer-layout",
+      "name": "ExplorerLayout",
+      "category": "Layout",
+      "kind": "component",
+      "component": "ExplorerLayout",
+      "subpath": "explorer-layout",
+      "purpose": "Named responsive header, sidebar, content and footer slots.",
+      "aliases": [
+        "layout",
+        "sidebar"
+      ],
+      "story": "templates-explorer-layout--overview",
+      "source": "src/components/templates/explorer-layout/ExplorerLayout.tsx",
+      "storyFile": "src/components/templates/explorer-layout/ExplorerLayout.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "marketing-layout",
+      "name": "MarketingLayout",
+      "category": "Layout",
+      "kind": "component",
+      "component": "MarketingLayout",
+      "subpath": "marketing-layout",
+      "purpose": "Presentation layout for composed content.",
+      "aliases": [
+        "page layout"
+      ],
+      "story": "templates-marketing-layout--default",
+      "source": "src/components/templates/marketing-layout/MarketingLayout.tsx",
+      "storyFile": "src/components/templates/marketing-layout/MarketingLayout.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "input-email",
+      "name": "Email field",
+      "category": "Forms",
+      "kind": "recipe",
+      "component": "TextField",
+      "subpath": "text-field",
+      "purpose": "Use TextField type=\"email\" with an application-owned visible label and native constraints.",
+      "aliases": [
+        "email"
+      ],
+      "story": "molecules-textfield--default",
+      "source": "src/components/molecules/text-field/TextField.tsx",
+      "storyFile": "src/components/molecules/text-field/TextField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "input-password",
+      "name": "Password field",
+      "category": "Forms",
+      "kind": "recipe",
+      "component": "TextField",
+      "subpath": "text-field",
+      "purpose": "Use TextField type=\"password\" with an application-owned visible label and native constraints.",
+      "aliases": [
+        "password"
+      ],
+      "story": "molecules-textfield--default",
+      "source": "src/components/molecules/text-field/TextField.tsx",
+      "storyFile": "src/components/molecules/text-field/TextField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "input-url",
+      "name": "URL field",
+      "category": "Forms",
+      "kind": "recipe",
+      "component": "TextField",
+      "subpath": "text-field",
+      "purpose": "Use TextField type=\"url\" with an application-owned visible label and native constraints.",
+      "aliases": [
+        "url"
+      ],
+      "story": "molecules-textfield--default",
+      "source": "src/components/molecules/text-field/TextField.tsx",
+      "storyFile": "src/components/molecules/text-field/TextField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "input-tel",
+      "name": "Telephone field",
+      "category": "Forms",
+      "kind": "recipe",
+      "component": "TextField",
+      "subpath": "text-field",
+      "purpose": "Use TextField type=\"tel\" with an application-owned visible label and native constraints.",
+      "aliases": [
+        "tel"
+      ],
+      "story": "molecules-textfield--default",
+      "source": "src/components/molecules/text-field/TextField.tsx",
+      "storyFile": "src/components/molecules/text-field/TextField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "input-search",
+      "name": "Search input",
+      "category": "Forms",
+      "kind": "recipe",
+      "component": "TextField",
+      "subpath": "text-field",
+      "purpose": "Use TextField type=\"search\" with an application-owned visible label and native constraints.",
+      "aliases": [
+        "search"
+      ],
+      "story": "molecules-textfield--default",
+      "source": "src/components/molecules/text-field/TextField.tsx",
+      "storyFile": "src/components/molecules/text-field/TextField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "input-number",
+      "name": "Number / spinbutton",
+      "category": "Forms",
+      "kind": "recipe",
+      "component": "NativeField",
+      "subpath": "native-field",
+      "purpose": "Use NativeField type=\"number\". The browser owns picker UI; the MFE owns parsing, time zones and validation.",
+      "aliases": [
+        "number"
+      ],
+      "story": "controls-forms-nativefield--default",
+      "source": "src/components/molecules/native-field/NativeField.tsx",
+      "storyFile": "src/components/molecules/native-field/NativeField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "input-date",
+      "name": "date picker",
+      "category": "Forms",
+      "kind": "recipe",
+      "component": "NativeField",
+      "subpath": "native-field",
+      "purpose": "Use NativeField type=\"date\". The browser owns picker UI; the MFE owns parsing, time zones and validation.",
+      "aliases": [
+        "date"
+      ],
+      "story": "controls-forms-nativefield--default",
+      "source": "src/components/molecules/native-field/NativeField.tsx",
+      "storyFile": "src/components/molecules/native-field/NativeField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "input-datetime-local",
+      "name": "datetime-local picker",
+      "category": "Forms",
+      "kind": "recipe",
+      "component": "NativeField",
+      "subpath": "native-field",
+      "purpose": "Use NativeField type=\"datetime-local\". The browser owns picker UI; the MFE owns parsing, time zones and validation.",
+      "aliases": [
+        "datetime-local"
+      ],
+      "story": "controls-forms-nativefield--default",
+      "source": "src/components/molecules/native-field/NativeField.tsx",
+      "storyFile": "src/components/molecules/native-field/NativeField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "input-time",
+      "name": "time picker",
+      "category": "Forms",
+      "kind": "recipe",
+      "component": "NativeField",
+      "subpath": "native-field",
+      "purpose": "Use NativeField type=\"time\". The browser owns picker UI; the MFE owns parsing, time zones and validation.",
+      "aliases": [
+        "time"
+      ],
+      "story": "controls-forms-nativefield--default",
+      "source": "src/components/molecules/native-field/NativeField.tsx",
+      "storyFile": "src/components/molecules/native-field/NativeField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "input-month",
+      "name": "month picker",
+      "category": "Forms",
+      "kind": "recipe",
+      "component": "NativeField",
+      "subpath": "native-field",
+      "purpose": "Use NativeField type=\"month\". The browser owns picker UI; the MFE owns parsing, time zones and validation.",
+      "aliases": [
+        "month"
+      ],
+      "story": "controls-forms-nativefield--default",
+      "source": "src/components/molecules/native-field/NativeField.tsx",
+      "storyFile": "src/components/molecules/native-field/NativeField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "input-week",
+      "name": "week picker",
+      "category": "Forms",
+      "kind": "recipe",
+      "component": "NativeField",
+      "subpath": "native-field",
+      "purpose": "Use NativeField type=\"week\". The browser owns picker UI; the MFE owns parsing, time zones and validation.",
+      "aliases": [
+        "week"
+      ],
+      "story": "controls-forms-nativefield--default",
+      "source": "src/components/molecules/native-field/NativeField.tsx",
+      "storyFile": "src/components/molecules/native-field/NativeField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "input-color",
+      "name": "color picker",
+      "category": "Forms",
+      "kind": "recipe",
+      "component": "NativeField",
+      "subpath": "native-field",
+      "purpose": "Use NativeField type=\"color\". The browser owns picker UI; the MFE owns parsing, time zones and validation.",
+      "aliases": [
+        "color"
+      ],
+      "story": "controls-forms-nativefield--default",
+      "source": "src/components/molecules/native-field/NativeField.tsx",
+      "storyFile": "src/components/molecules/native-field/NativeField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "textarea-field",
+      "name": "Multiline field",
+      "category": "Forms",
+      "kind": "recipe",
+      "component": "TextArea",
+      "subpath": "text-area",
+      "purpose": "Compose TextArea with a visible label and associated hints/errors.",
+      "aliases": [
+        "multiline",
+        "textarea"
+      ],
+      "story": "atoms-textarea--default",
+      "source": "src/components/atoms/text-area/TextArea.tsx",
+      "storyFile": "src/components/atoms/text-area/TextArea.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "radio-group",
+      "name": "Radio group",
+      "category": "Forms",
+      "kind": "recipe",
+      "component": "Fieldset",
+      "subpath": "fieldset",
+      "purpose": "Place same-name RadioButton controls inside Fieldset. Use a unique name per independent group.",
+      "aliases": [
+        "radio group"
+      ],
+      "story": "controls-forms-fieldset--default",
+      "source": "src/components/molecules/fieldset/Fieldset.tsx",
+      "storyFile": "src/components/molecules/fieldset/Fieldset.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "multi-select",
+      "name": "Multiple selection listbox",
+      "category": "Forms",
+      "kind": "recipe",
+      "component": "SelectField",
+      "subpath": "select-field",
+      "purpose": "Use multiple and native option/optgroup children; handle selectedOptions in the MFE.",
+      "aliases": [
+        "listbox",
+        "multi-select"
+      ],
+      "story": "controls-forms-selectfield--default",
+      "source": "src/components/molecules/select-field/SelectField.tsx",
+      "storyFile": "src/components/molecules/select-field/SelectField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "option-groups",
+      "name": "Grouped options",
+      "category": "Forms",
+      "kind": "recipe",
+      "component": "SelectField",
+      "subpath": "select-field",
+      "purpose": "Use native optgroup labels inside SelectField.",
+      "aliases": [
+        "optgroup",
+        "grouped select"
+      ],
+      "story": "controls-forms-selectfield--default",
+      "source": "src/components/molecules/select-field/SelectField.tsx",
+      "storyFile": "src/components/molecules/select-field/SelectField.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "icon-button",
+      "name": "Icon-only button",
+      "category": "Actions",
+      "kind": "recipe",
+      "component": "Button",
+      "subpath": "button",
+      "purpose": "Supply an accessible translated name and decorative icon children; use button semantics for actions.",
+      "aliases": [
+        "icon button"
+      ],
+      "story": "atoms-button--primary",
+      "source": "src/components/atoms/button/Button.tsx",
+      "storyFile": "src/components/atoms/button/Button.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "button-group",
+      "name": "Button group",
+      "category": "Actions",
+      "kind": "recipe",
+      "component": "Toolbar",
+      "subpath": "toolbar",
+      "purpose": "Compose buttons or ToggleButton controls in a named Toolbar.",
+      "aliases": [
+        "button group",
+        "segmented buttons"
+      ],
+      "story": "controls-actions-toolbar--default",
+      "source": "src/components/organisms/toolbar/Toolbar.tsx",
+      "storyFile": "src/components/organisms/toolbar/Toolbar.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "submit-reset",
+      "name": "Submit and reset actions",
+      "category": "Actions",
+      "kind": "recipe",
+      "component": "Button",
+      "subpath": "button",
+      "purpose": "Use native type=\"submit\" or type=\"reset\" inside the consumer-owned form.",
+      "aliases": [
+        "submit",
+        "reset"
+      ],
+      "story": "atoms-button--primary",
+      "source": "src/components/atoms/button/Button.tsx",
+      "storyFile": "src/components/atoms/button/Button.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "confirmation",
+      "name": "Confirmation dialog",
+      "category": "Overlays",
+      "kind": "recipe",
+      "component": "Dialog",
+      "subpath": "dialog",
+      "purpose": "Compose Dialog with explicit confirm/cancel buttons; the MFE owns confirmation state and the operation.",
+      "aliases": [
+        "confirmation",
+        "confirm"
+      ],
+      "story": "controls-overlays-dialog--default",
+      "source": "src/components/organisms/dialog/Dialog.tsx",
+      "storyFile": "src/components/organisms/dialog/Dialog.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "toast",
+      "name": "Toast / snackbar",
+      "category": "Feedback",
+      "kind": "recipe",
+      "component": "Alert",
+      "subpath": "alert",
+      "purpose": "Mount an Alert in an MFE-owned notification region. Keep dismissal and timing consumer-owned; do not interrupt focus.",
+      "aliases": [
+        "toast",
+        "snackbar"
+      ],
+      "story": "controls-feedback-alert--default",
+      "source": "src/components/molecules/alert/Alert.tsx",
+      "storyFile": "src/components/molecules/alert/Alert.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "form-errors",
+      "name": "Form error summary",
+      "category": "Feedback",
+      "kind": "recipe",
+      "component": "Alert",
+      "subpath": "alert",
+      "purpose": "Compose a named Alert containing links to invalid field IDs; focus and validation orchestration remain in the MFE.",
+      "aliases": [
+        "validation",
+        "error summary"
+      ],
+      "story": "controls-feedback-alert--default",
+      "source": "src/components/molecules/alert/Alert.tsx",
+      "storyFile": "src/components/molecules/alert/Alert.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "stepper",
+      "name": "Step indicator / wizard",
+      "category": "Navigation",
+      "kind": "recipe",
+      "component": "",
+      "subpath": "",
+      "purpose": "Use a named ordered progress trail with aria-current=\"step\" in consumer markup; Breadcrumbs is only for page location.",
+      "aliases": [
+        "steps",
+        "wizard"
+      ],
+      "story": "reference-native-recipes--forms",
+      "source": "",
+      "storyFile": "src/reference/NativeRecipes.stories.tsx",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/"
+    },
+    {
+      "id": "sidebar",
+      "name": "Sidebar navigation",
+      "category": "Navigation",
+      "kind": "recipe",
+      "component": "ExplorerLayout",
+      "subpath": "explorer-layout",
+      "purpose": "Supply a named nav with normal links in the sidebar slot. Keep routing in the MFE.",
+      "aliases": [
+        "sidebar",
+        "side navigation"
+      ],
+      "story": "templates-explorer-layout--overview",
+      "source": "src/components/templates/explorer-layout/ExplorerLayout.tsx",
+      "storyFile": "src/components/templates/explorer-layout/ExplorerLayout.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "responsive-grid",
+      "name": "Responsive content grid",
+      "category": "Layout",
+      "kind": "recipe",
+      "component": "ContentCard",
+      "subpath": "content-card",
+      "purpose": "Compose cards with a consumer CSS grid; use semantic lists where items form a collection.",
+      "aliases": [
+        "grid",
+        "tiles"
+      ],
+      "story": "molecules-contentcard--default",
+      "source": "src/components/molecules/content-card/ContentCard.tsx",
+      "storyFile": "src/components/molecules/content-card/ContentCard.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "definition-list",
+      "name": "Description / definition list",
+      "category": "Data display",
+      "kind": "recipe",
+      "component": "",
+      "subpath": "",
+      "purpose": "Use native dl/dt/dd for key-value pairs; a DataTable is for tabular relationships.",
+      "aliases": [
+        "description list",
+        "key value"
+      ],
+      "story": "reference-native-recipes--forms",
+      "source": "",
+      "storyFile": "src/reference/NativeRecipes.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/input.html"
+    },
+    {
+      "id": "feed",
+      "name": "Feed / activity list",
+      "category": "Content",
+      "kind": "recipe",
+      "component": "",
+      "subpath": "",
+      "purpose": "Compose articles or a native list; fetching, pagination and virtualized feed keyboard behavior require an MFE adapter.",
+      "aliases": [
+        "feed",
+        "activity"
+      ],
+      "story": "reference-native-recipes--forms",
+      "source": "",
+      "storyFile": "src/reference/NativeRecipes.stories.tsx",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/feed/"
+    },
+    {
+      "id": "menu",
+      "name": "Menu / menu button",
+      "category": "Navigation",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Composite application commands require popup focus and arrow-key contracts. Ordinary site navigation uses links.",
+      "aliases": [
+        "menu",
+        "menu",
+        "button"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/"
+    },
+    {
+      "id": "menubar",
+      "name": "Menu bar",
+      "category": "Navigation",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Persistent desktop-style command menus require nested focus management.",
+      "aliases": [
+        "menu",
+        "bar"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/menubar/"
+    },
+    {
+      "id": "context-menu",
+      "name": "Context menu",
+      "category": "Overlays",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Contextual command menus require keyboard invocation, focus restoration and pointer placement.",
+      "aliases": [
+        "context",
+        "menu"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/menubar/"
+    },
+    {
+      "id": "popover",
+      "name": "Popover / nonmodal flyout",
+      "category": "Overlays",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Nonmodal interactive content requires explicit dismissal, placement, focus and scope contracts.",
+      "aliases": [
+        "popover",
+        "nonmodal",
+        "flyout"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/"
+    },
+    {
+      "id": "drawer",
+      "name": "Drawer / sheet",
+      "category": "Overlays",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Modal sheets can compose Dialog; anchored nonmodal drawers need a dedicated contract.",
+      "aliases": [
+        "drawer",
+        "sheet"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/"
+    },
+    {
+      "id": "select-only-combobox",
+      "name": "Custom select-only combobox",
+      "category": "Forms",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Use native SelectField when possible; custom popup selection needs dedicated composite keyboard behavior.",
+      "aliases": [
+        "custom",
+        "select-only",
+        "combobox"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/combobox/"
+    },
+    {
+      "id": "async-combobox",
+      "name": "Async / tokenized combobox",
+      "category": "Forms",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Native Autocomplete is free text with static suggestions; async selection and tokens need a dedicated contract.",
+      "aliases": [
+        "async",
+        "tokenized",
+        "combobox"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/combobox/"
+    },
+    {
+      "id": "tree",
+      "name": "Tree view",
+      "category": "Navigation",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Hierarchical expansion, selection and roving keyboard behavior.",
+      "aliases": [
+        "tree",
+        "view"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/treeview/"
+    },
+    {
+      "id": "treegrid",
+      "name": "Tree grid",
+      "category": "Data display",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Hierarchical tabular interaction and cell navigation.",
+      "aliases": [
+        "tree",
+        "grid"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/treegrid/"
+    },
+    {
+      "id": "data-grid",
+      "name": "Interactive data grid",
+      "category": "Data display",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Cell selection/editing is distinct from a native read-only DataTable.",
+      "aliases": [
+        "interactive",
+        "data",
+        "grid"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/grid/"
+    },
+    {
+      "id": "multi-thumb-slider",
+      "name": "Multi-thumb slider",
+      "category": "Forms",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Multiple ordered thumbs need separate names and keyboard constraints.",
+      "aliases": [
+        "multi-thumb",
+        "slider"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/slider-multithumb/"
+    },
+    {
+      "id": "splitter",
+      "name": "Resizable splitter",
+      "category": "Layout",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Requires keyboard resizing, bounds and value announcements.",
+      "aliases": [
+        "resizable",
+        "splitter"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/windowsplitter/"
+    },
+    {
+      "id": "calendar-grid",
+      "name": "Custom calendar / date range",
+      "category": "Forms",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Use NativeField date controls for simple cases; date ranges require calendar, locale and focus contracts.",
+      "aliases": [
+        "custom",
+        "calendar",
+        "date",
+        "range"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/grid/"
+    },
+    {
+      "id": "rich-text",
+      "name": "Rich-text editor",
+      "category": "Forms",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Editing, history, sanitization and persistence require a dedicated consumer adapter.",
+      "aliases": [
+        "rich-text",
+        "editor"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/"
+    },
+    {
+      "id": "drag-drop",
+      "name": "Drag and drop / sortable list",
+      "category": "Content",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Requires a keyboard alternative, announcements and consumer-owned ordering.",
+      "aliases": [
+        "drag",
+        "and",
+        "drop",
+        "sortable",
+        "list"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/listbox/"
+    },
+    {
+      "id": "rating",
+      "name": "Rating control",
+      "category": "Forms",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Can compose a labeled native radio group; icon labels and clear/reset behavior need application copy.",
+      "aliases": [
+        "rating",
+        "control"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/radio/"
+    },
+    {
+      "id": "command-palette",
+      "name": "Command palette",
+      "category": "Overlays",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Search, virtualized choices, shortcut ownership and routing require a dedicated adapter.",
+      "aliases": [
+        "command",
+        "palette"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/combobox/"
+    },
+    {
+      "id": "password-reveal",
+      "name": "Password reveal action",
+      "category": "Forms",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Compose a password TextField and ToggleButton; the MFE owns reveal state and translated labels.",
+      "aliases": [
+        "password",
+        "reveal",
+        "action"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/button/"
+    },
+    {
+      "id": "otp",
+      "name": "One-time-code input",
+      "category": "Forms",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Prefer one TextField with autoComplete=\"one-time-code\" and inputMode; verification remains application-owned.",
+      "aliases": [
+        "one-time-code",
+        "input"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "infinite-scroll",
+      "name": "Infinite scrolling",
+      "category": "Data display",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Loading, virtualization, back navigation and focus restoration require an MFE adapter.",
+      "aliases": [
+        "infinite",
+        "scrolling"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/feed/"
+    },
+    {
+      "id": "media-controls",
+      "name": "Audio / video controls",
+      "category": "Content",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Use native audio/video controls when possible; captions, media state and playback permissions are consumer-owned.",
+      "aliases": [
+        "audio",
+        "video",
+        "controls"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://www.w3.org/WAI/ARIA/apg/patterns/button/"
+    },
+    {
+      "id": "image-map",
+      "name": "Image / interactive map",
+      "category": "Data display",
+      "kind": "reference",
+      "component": "",
+      "subpath": "",
+      "purpose": "Geospatial interaction and third-party mapping engines require a separate contract.",
+      "aliases": [
+        "image",
+        "interactive",
+        "map"
+      ],
+      "story": "",
+      "source": "",
+      "storyFile": "",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "brand-lockup",
+      "name": "BrandLockup",
+      "category": "Content",
+      "kind": "component",
+      "component": "BrandLockup",
+      "subpath": "brand-lockup",
+      "purpose": "Consumer-owned artwork and wordmark home link.",
+      "aliases": [
+        "brand-lockup"
+      ],
+      "story": "molecules-brandlockup--default",
+      "source": "src/components/molecules/brand-lockup/BrandLockup.tsx",
+      "storyFile": "src/components/molecules/brand-lockup/BrandLockup.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "navigation-disclosure",
+      "name": "NavigationDisclosure",
+      "category": "Navigation",
+      "kind": "component",
+      "component": "NavigationDisclosure",
+      "subpath": "navigation-disclosure",
+      "purpose": "Dismissible navigation disclosure with ordinary links.",
+      "aliases": [
+        "navigation-disclosure"
+      ],
+      "story": "molecules-navigationdisclosure--default",
+      "source": "src/components/molecules/navigation-disclosure/NavigationDisclosure.tsx",
+      "storyFile": "src/components/molecules/navigation-disclosure/NavigationDisclosure.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "page-navigation",
+      "name": "PageNavigation",
+      "category": "Navigation",
+      "kind": "component",
+      "component": "PageNavigation",
+      "subpath": "page-navigation",
+      "purpose": "Page destination links with a current-page indicator.",
+      "aliases": [
+        "page-navigation"
+      ],
+      "story": "molecules-pagenavigation--default",
+      "source": "src/components/molecules/page-navigation/PageNavigation.tsx",
+      "storyFile": "src/components/molecules/page-navigation/PageNavigation.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "principle-list",
+      "name": "PrincipleList",
+      "category": "Content",
+      "kind": "component",
+      "component": "PrincipleList",
+      "subpath": "principle-list",
+      "purpose": "Ordered caller-supplied principles.",
+      "aliases": [
+        "principle-list"
+      ],
+      "story": "molecules-principlelist--default",
+      "source": "src/components/molecules/principle-list/PrincipleList.tsx",
+      "storyFile": "src/components/molecules/principle-list/PrincipleList.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "feature-section",
+      "name": "FeatureSection",
+      "category": "Layout",
+      "kind": "component",
+      "component": "FeatureSection",
+      "subpath": "feature-section",
+      "purpose": "Heading, responsive content grid and action slots.",
+      "aliases": [
+        "feature-section"
+      ],
+      "story": "organisms-featuresection--default",
+      "source": "src/components/organisms/feature-section/FeatureSection.tsx",
+      "storyFile": "src/components/organisms/feature-section/FeatureSection.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "carousel",
+      "name": "Carousel",
+      "category": "Content",
+      "kind": "component",
+      "component": "Carousel",
+      "subpath": "carousel",
+      "purpose": "Controlled or uncontrolled slides with opt-in accessible rotation.",
+      "aliases": [
+        "carousel"
+      ],
+      "story": "organisms-carousel--default",
+      "source": "src/components/organisms/carousel/Carousel.tsx",
+      "storyFile": "src/components/organisms/carousel/Carousel.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    }
+  ]
+}

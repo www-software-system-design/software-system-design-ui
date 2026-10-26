@@ -1,0 +1,10 @@
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { Checkbox } from './Checkbox.js';
+const meta = { title: 'Controls/Forms/Checkbox', component: Checkbox, tags: ['autodocs'], args: { label: 'Accept the terms', description: 'Review the terms before continuing.', name: 'consent' } } satisfies Meta<typeof Checkbox>;
+export default meta;
+type Story = StoryObj<typeof meta>;
+export const Default: Story = {};
+export const CompactRtl: Story = { globals: { viewport: 'compact', direction: 'rtl' } };
+export const Disabled: Story = { args: { disabled: true } };
+export const Invalid: Story = { args: { error: 'Review this field before continuing.' } };
+export const Mixed: Story = { args: { indeterminate: true } };

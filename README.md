@@ -34,6 +34,10 @@ Use Node.js 24 LTS (minimum 22.12) and npm. Run npm ci, then npx playwright inst
 
 ## Consumer usage
 
+Use the [web UI control dictionary](docs/ui-dictionary.md) to find controls by
+category, alias, purpose, public import and availability. Storybook includes a
+searchable **Reference / UI dictionary** and a composed **Control gallery**.
+
 Install the package with compatible React and React DOM peers:
 
 ```sh

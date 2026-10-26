@@ -7,6 +7,7 @@ import { ContentCard } from '../../molecules/content-card/index.js';
 import { Statistic } from '../../molecules/statistic/index.js';
 import { Disclosure } from '../../molecules/disclosure/index.js';
 import { Badge } from '../../atoms/badge/index.js';
+import { BrandLockup } from '../../molecules/brand-lockup/index.js';
 const meta = {
   id: 'templates-marketing-layout', title: "Templates/MarketingLayout",
   component: MarketingLayout,
@@ -31,11 +32,11 @@ export const CompactRtl: Story = {
 
 export const Studio: Story = {
   args: {
-    header: <SiteHeader brand={<strong>Software-System.Design</strong>}
+    header: <SiteHeader brand={<BrandLockup href='https://software-system.design' label='Software-System.Design home' artwork={<img src='./software-system-design-logo.png' width={1254} height={1254} alt='' />} wordmark={<span style={{ display: 'grid', lineHeight: 1.1 }}><span>Software-</span><span>System.</span><span>Design</span></span>} />}
       navigation={<><a href="#plans">Plans</a><a href="#community">Community</a></>}
       actions={<Badge tone="accent">OPEN SOURCE</Badge>}
       navigationLabel="Main navigation" openLabel="Open navigation menu" closeLabel="Close navigation menu" />,
-    footer: <SiteFooter brand={<strong>Software-System.Design</strong>}
+    footer: <SiteFooter brand={<BrandLockup variant='footer' href='https://software-system.design' label='Software-System.Design home' artwork={<img src='./software-system-design-logo.png' width={1254} height={1254} alt='' />} wordmark={<span style={{ display: 'grid', lineHeight: 1.1 }}><span>Software-</span><span>System.</span><span>Design</span></span>} />}
       navigation={<a href="https://software-system.design">Visit the studio</a>}
       legal="Built in the open." />,
     children: <div className="ssd-example-marketing">

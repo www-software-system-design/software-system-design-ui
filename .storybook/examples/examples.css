@@ -4,3 +4,12 @@
 .ssd-example-swatch { min-block-size: 3rem; border: 1px solid var(--ssd-color-border); border-radius: var(--ssd-radius-control); }
 .ssd-example-token { margin: 0; padding: var(--ssd-space-3); overflow-wrap: anywhere; }
 .ssd-example-marketing { display: grid; gap: var(--ssd-space-6); padding: var(--ssd-space-6); }
+.ssd-reference { min-inline-size: 0; overflow-wrap: anywhere; }
+.ssd-reference__filters, .ssd-reference__gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: var(--ssd-space-6); }
+.ssd-reference__gallery > section { min-inline-size: 0; }
+.ssd-reference__gallery h2 { font-size: var(--ssd-font-size-heading); }
+.ssd-reference__gallery .ssd-fieldset { align-content: start; }
+.ssd-reference .ssd-data-table { max-block-size: 65vh; }
+.ssd-reference .ssd-data-table th { white-space: nowrap; }
+.ssd-reference .ssd-data-table td { min-inline-size: 9rem; }
+.ssd-reference .ssd-data-table td:last-child { min-inline-size: 18rem; }

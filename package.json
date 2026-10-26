@@ -118,6 +118,130 @@
     "./marketing-layout": {
       "types": "./dist/components/templates/marketing-layout/index.d.ts",
       "import": "./dist/components/templates/marketing-layout/index.js"
+    },
+    "./data-chart": {
+      "types": "./dist/components/organisms/data-chart/index.d.ts",
+      "import": "./dist/components/organisms/data-chart/index.js"
+    },
+    "./avatar": {
+      "types": "./dist/components/atoms/avatar/index.d.ts",
+      "import": "./dist/components/atoms/avatar/index.js"
+    },
+    "./link": {
+      "types": "./dist/components/atoms/link/index.d.ts",
+      "import": "./dist/components/atoms/link/index.js"
+    },
+    "./meter": {
+      "types": "./dist/components/atoms/meter/index.d.ts",
+      "import": "./dist/components/atoms/meter/index.js"
+    },
+    "./progress-bar": {
+      "types": "./dist/components/atoms/progress-bar/index.d.ts",
+      "import": "./dist/components/atoms/progress-bar/index.js"
+    },
+    "./separator": {
+      "types": "./dist/components/atoms/separator/index.d.ts",
+      "import": "./dist/components/atoms/separator/index.js"
+    },
+    "./skeleton": {
+      "types": "./dist/components/atoms/skeleton/index.d.ts",
+      "import": "./dist/components/atoms/skeleton/index.js"
+    },
+    "./spinner": {
+      "types": "./dist/components/atoms/spinner/index.d.ts",
+      "import": "./dist/components/atoms/spinner/index.js"
+    },
+    "./toggle-button": {
+      "types": "./dist/components/atoms/toggle-button/index.d.ts",
+      "import": "./dist/components/atoms/toggle-button/index.js"
+    },
+    "./alert": {
+      "types": "./dist/components/molecules/alert/index.d.ts",
+      "import": "./dist/components/molecules/alert/index.js"
+    },
+    "./autocomplete": {
+      "types": "./dist/components/molecules/autocomplete/index.d.ts",
+      "import": "./dist/components/molecules/autocomplete/index.js"
+    },
+    "./breadcrumbs": {
+      "types": "./dist/components/molecules/breadcrumbs/index.d.ts",
+      "import": "./dist/components/molecules/breadcrumbs/index.js"
+    },
+    "./checkbox": {
+      "types": "./dist/components/molecules/checkbox/index.d.ts",
+      "import": "./dist/components/molecules/checkbox/index.js"
+    },
+    "./fieldset": {
+      "types": "./dist/components/molecules/fieldset/index.d.ts",
+      "import": "./dist/components/molecules/fieldset/index.js"
+    },
+    "./file-upload": {
+      "types": "./dist/components/molecules/file-upload/index.d.ts",
+      "import": "./dist/components/molecules/file-upload/index.js"
+    },
+    "./native-field": {
+      "types": "./dist/components/molecules/native-field/index.d.ts",
+      "import": "./dist/components/molecules/native-field/index.js"
+    },
+    "./radio-button": {
+      "types": "./dist/components/molecules/radio-button/index.d.ts",
+      "import": "./dist/components/molecules/radio-button/index.js"
+    },
+    "./range-field": {
+      "types": "./dist/components/molecules/range-field/index.d.ts",
+      "import": "./dist/components/molecules/range-field/index.js"
+    },
+    "./select-field": {
+      "types": "./dist/components/molecules/select-field/index.d.ts",
+      "import": "./dist/components/molecules/select-field/index.js"
+    },
+    "./switch": {
+      "types": "./dist/components/molecules/switch/index.d.ts",
+      "import": "./dist/components/molecules/switch/index.js"
+    },
+    "./tooltip": {
+      "types": "./dist/components/molecules/tooltip/index.d.ts",
+      "import": "./dist/components/molecules/tooltip/index.js"
+    },
+    "./accordion": {
+      "types": "./dist/components/organisms/accordion/index.d.ts",
+      "import": "./dist/components/organisms/accordion/index.js"
+    },
+    "./dialog": {
+      "types": "./dist/components/organisms/dialog/index.d.ts",
+      "import": "./dist/components/organisms/dialog/index.js"
+    },
+    "./tabs": {
+      "types": "./dist/components/organisms/tabs/index.d.ts",
+      "import": "./dist/components/organisms/tabs/index.js"
+    },
+    "./toolbar": {
+      "types": "./dist/components/organisms/toolbar/index.d.ts",
+      "import": "./dist/components/organisms/toolbar/index.js"
+    },
+    "./brand-lockup": {
+      "types": "./dist/components/molecules/brand-lockup/index.d.ts",
+      "import": "./dist/components/molecules/brand-lockup/index.js"
+    },
+    "./navigation-disclosure": {
+      "types": "./dist/components/molecules/navigation-disclosure/index.d.ts",
+      "import": "./dist/components/molecules/navigation-disclosure/index.js"
+    },
+    "./page-navigation": {
+      "types": "./dist/components/molecules/page-navigation/index.d.ts",
+      "import": "./dist/components/molecules/page-navigation/index.js"
+    },
+    "./principle-list": {
+      "types": "./dist/components/molecules/principle-list/index.d.ts",
+      "import": "./dist/components/molecules/principle-list/index.js"
+    },
+    "./feature-section": {
+      "types": "./dist/components/organisms/feature-section/index.d.ts",
+      "import": "./dist/components/organisms/feature-section/index.js"
+    },
+    "./carousel": {
+      "types": "./dist/components/organisms/carousel/index.d.ts",
+      "import": "./dist/components/organisms/carousel/index.js"
     }
   },
   "engines": {
@@ -128,7 +252,7 @@
     "build": "node scripts/build.mjs",
     "prepack": "npm run build",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint . && node scripts/check-components.mjs && depcruise src --config .dependency-cruiser.cjs",
+    "lint": "eslint . && node scripts/check-components.mjs && depcruise src --config .dependency-cruiser.cjs && node scripts/check-ui-dictionary.mjs",
     "test": "vitest run --project unit",
     "test:watch": "vitest --project unit",
     "test:stories": "vitest run --config vitest.storybook.config.ts",
@@ -143,7 +267,8 @@
     "test:release": "node --test scripts/release.test.mjs",
     "check:release": "node scripts/check-release.mjs",
     "prepublishOnly": "npm run check:release && npm run check:package",
-    "check": "npm run lint && npm run typecheck && npm test && npm run test:generator && npm run test:config && npm run test:release && npm run check:package"
+    "check": "npm run lint && npm run typecheck && npm test && npm run test:generator && npm run test:config && npm run test:dictionary && npm run test:release && npm run check:package",
+    "test:dictionary": "node --test scripts/ui-dictionary.test.mjs"
   },
   "peerDependencies": {
     "react": "^19.3.0",

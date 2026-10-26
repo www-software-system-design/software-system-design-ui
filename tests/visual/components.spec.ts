@@ -23,21 +23,49 @@ test('compact RTL studio navigation respects its container width',async({page})=
   await expect(trigger).toHaveAttribute('aria-expanded','false');
   await expect(layout).toHaveCSS('direction','rtl');
   expect(await layout.evaluate(element=>element.scrollWidth<=element.clientWidth)).toBe(true);
+  const footer = layout.getByRole('contentinfo');
+  await expect(footer.getByRole('link', { name: 'Software-System.Design home' }).locator('img')).toHaveCSS('width', '112px');
+  const lines = footer.locator('.ssd-brand-lockup__wordmark > span > span');
+  for (const line of await lines.all()) {
+    expect(await line.evaluate(element => {
+      const range = document.createRange();
+      range.selectNodeContents(element);
+      return new Set(Array.from(range.getClientRects(), rect => Math.round(rect.top))).size;
+    })).toBe(1);
+  }
   await expect(layout).toHaveScreenshot('studio-compact-rtl.png',{animations:'disabled'});
 });
 
 test('Storybook manager uses the supplied brand identity',async({page})=>{
   await page.goto('/?path=/story/templates-marketing-layout--studio');
   await expect(page.getByRole('link',{name:'Software-System.Design UI'})).toBeVisible();
+  const brand = page.getByRole('link', { name: 'Software-System.Design UI' });
+  await expect(brand.getByRole('img')).toHaveJSProperty('naturalWidth', 1254);
+  await expect(brand).toHaveScreenshot('storybook-brand.png', { animations: 'disabled' });
   await expect(page.locator('link[rel="icon"]').first()).toHaveAttribute('href',/software-system-design-icon\.png/);
 });
 
 for (const theme of ['light', 'dark']) {
+  test('electric blue primary actions and gray secondary hover in ' + theme, async ({ page }) => {
+    await page.goto('/iframe.html?id=atoms-button--primary&viewMode=story&globals=theme:' + theme);
+    const button = page.getByRole('button', { name: 'Save changes' });
+    await page.mouse.move(0, 0);
+    await expect(button).toHaveCSS('background-color', 'rgb(0, 85, 255)');
+    await expect(button).toHaveCSS('color', 'rgb(255, 255, 255)');
+    await button.hover();
+    await expect(button).toHaveCSS('background-color', 'rgb(0, 72, 217)');
+    await button.focus();
+    await expect(button).toHaveCSS('outline-style', 'solid');
+    await page.goto('/iframe.html?id=atoms-button--secondary&viewMode=story&globals=theme:' + theme);
+    await button.hover();
+    await expect(button).toHaveCSS('background-color', 'rgb(209, 213, 219)');
+  });
   test(`button appearance in ${theme} theme`, async ({ page }) => {
     await page.goto(`/iframe.html?id=atoms-button--secondary&viewMode=story&globals=theme:${theme}`);
     const button = page.getByRole('button', { name: 'Save changes' });
     await expect(button).toBeVisible();
-    await expect(button).toHaveCSS('color', theme === 'light' ? 'rgb(22, 35, 57)' : 'rgb(238, 243, 252)');
+    await expect(button).toHaveCSS('color', 'rgb(17, 24, 39)');
+    await expect(button).toHaveCSS('background-color', 'rgb(229, 231, 235)');
     await expect(button).toHaveScreenshot(`button-${theme}.png`, { animations: 'disabled' });
   });
 }
@@ -46,9 +74,11 @@ test('system theme follows browser preference without changing HTML attributes',
   await page.emulateMedia({ colorScheme: 'dark' });
   await page.goto('/iframe.html?id=atoms-button--secondary&viewMode=story&globals=theme:system');
   const button = page.getByRole('button', { name: 'Save changes' });
-  await expect(button).toHaveCSS('background-color', 'rgb(17, 25, 39)');
+  await expect(button).toHaveCSS('background-color', 'rgb(229, 231, 235)');
+  await expect(page.locator('.ssd-scope')).toHaveCSS('--ssd-color-surface', '#111927');
   await page.emulateMedia({ colorScheme: 'light' });
-  await expect(button).toHaveCSS('background-color', 'rgb(255, 255, 255)');
+  await expect(button).toHaveCSS('background-color', 'rgb(229, 231, 235)');
+  await expect(page.locator('.ssd-scope')).toHaveCSS('--ssd-color-surface', /^#(?:fff|ffffff)$/);
 });
 
 test('long labels fit the compact preview and RTL inherits direction', async ({ page }) => {

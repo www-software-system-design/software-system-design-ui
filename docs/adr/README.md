@@ -24,6 +24,7 @@ The repository contains a React package with tests, Storybook, CI configuration,
 | [0014](0014-container-components-and-brand.md) | Container presentation extraction and shared branding | Accepted for implementation |
 | [0015](0015-automatic-main-releases.md) | Automatic versioned npm and GitHub releases from main | Superseded by 0016 |
 | [0016](0016-manual-npm-publication.md) | Manual npm publication and validation-only CI | Accepted |
+| [0017](0017-web-ui-reference-dictionary.md) | Shared web UI control dictionary and native control contracts | Accepted for implementation |
 
 The owner requested these requirements and subsequently authorized their implementation as the repository scaffold. Future proposals must be distinguished from accepted decisions. A decision status does not by itself establish that its implementation or validation is complete.
 

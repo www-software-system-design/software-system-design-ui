@@ -1,0 +1,12 @@
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { NativeField } from './NativeField.js';
+const meta = { title: 'Controls/Forms/NativeField', component: NativeField, tags: ['autodocs'], args: { type: 'number', label: 'Quantity', defaultValue: 2 } } satisfies Meta<typeof NativeField>;
+export default meta;
+export const Default: StoryObj<typeof meta> = {args:{min:1,max:10}};
+export const Date: StoryObj<typeof meta> = { args: { type: 'date', label: 'Start date', defaultValue: '2026-10-26' } };
+export const Time: StoryObj<typeof meta> = { args: { type: 'time', label: 'Start time', defaultValue: '09:30' } };
+export const DateTime: StoryObj<typeof meta> = { args: { type: 'datetime-local', label: 'Local appointment', defaultValue: '2026-10-26T09:30' } };
+export const Month: StoryObj<typeof meta> = { args: { type: 'month', label: 'Billing month', defaultValue: '2026-10' } };
+export const Week: StoryObj<typeof meta> = { args: { type: 'week', label: 'Reporting week', defaultValue: '2026-W44' } };
+export const Color: StoryObj<typeof meta> = { args: { type: 'color', label: 'Accent color', defaultValue: '#245bc2' } };
+export const CompactRtl: StoryObj<typeof meta> = { globals: { viewport: 'compact', direction: 'rtl' } };

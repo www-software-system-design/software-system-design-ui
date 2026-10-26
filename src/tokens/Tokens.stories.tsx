@@ -3,7 +3,7 @@ import type { CSSProperties } from 'react';
 import { UIProvider } from '../providers/UIProvider.js';
 import { Button } from '../components/atoms/button/index.js';
 
-const colors = ['surface', 'surface-subtle', 'text', 'muted', 'danger', 'action', 'on-action', 'border', 'focus'] as const;
+const colors = ['background', 'surface', 'surface-subtle', 'text', 'muted', 'danger', 'action', 'on-action', 'button-primary', 'on-button-primary', 'button-primary-hover', 'button-secondary', 'on-button-secondary', 'button-secondary-hover', 'border', 'focus', 'brand-blue', 'brand-cyan', 'brand-indigo', 'brand-violet', 'brand-magenta'] as const;
 const meta = {
   title: 'Foundations/Tokens',
   parameters: { docs: { description: { component: 'Semantic --ssd-* CSS properties are the public styling contract. These swatches use the actual stylesheet rather than copied color values. Light/dark palettes have independent AA contrast tests for active text, errors, controls, and focus. Disabled states are not counted as active text. Override tokens at a DOM scope; never target private component selectors.' } } }
@@ -19,5 +19,5 @@ export const Palette: Story = {
 };
 export const DarkPalette: Story = { ...Palette, globals: { theme: 'dark' } };
 export const ScopedOverride: Story = {
-  render: () => <UIProvider style={{ '--ssd-color-action': '#6941c6', '--ssd-color-on-action': '#ffffff' } as CSSProperties}><Button>Custom action token</Button></UIProvider>
+  render: () => <UIProvider style={{ '--ssd-color-action': '#6941c6', '--ssd-color-on-action': '#ffffff', '--ssd-color-button-primary': '#6941c6', '--ssd-color-on-button-primary': '#ffffff' } as CSSProperties}><Button>Custom action token</Button></UIProvider>
 };

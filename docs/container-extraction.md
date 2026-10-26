@@ -6,6 +6,8 @@ for example `@software-system.design/ui/content-card` and
 once and place components inside UIProvider. There are no new runtime dependencies.
 
 See [ADR 0014](adr/0014-container-components-and-brand.md) for the extraction map.
+See the [fd99fbe follow-up extraction](container-commit-fd99fbe.md) for branding,
+navigation, principles, feature sections and carousel adoption.
 
 ## State and content contracts
 

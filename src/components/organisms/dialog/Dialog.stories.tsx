@@ -1,0 +1,10 @@
+import { useState } from 'react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { expect, userEvent, within } from 'storybook/test';
+import { Dialog } from './Dialog.js';
+const meta = { title: 'Controls/Overlays/Dialog', component: Dialog, tags: ['autodocs'], args: { title: 'Confirm changes', description: 'Review these settings before saving.', open: false, onOpenChange: () => { }, children: <p>Your MFE owns the save operation.</p> }, render: function Example(args) { const [open, setOpen] = useState(args.open); return <><button type='button' onClick={() => setOpen(true)}>Open dialog</button><Dialog {...args} open={open} onOpenChange={setOpen}/></>; } } satisfies Meta<typeof Dialog>;
+export default meta;
+type Story = StoryObj<typeof meta>;
+export const Default: Story = { play: async ({ canvasElement }) => { const canvas = within(canvasElement); await userEvent.click(canvas.getByRole('button', { name: 'Open dialog' })); await expect(canvas.getByRole('dialog', { name: 'Confirm changes' })).toBeVisible(); await userEvent.click(canvas.getByRole('button', { name: 'Close' })); await expect(canvas.queryByRole('dialog')).not.toBeInTheDocument(); } };
+export const Open: Story = { args: { open: true } };
+export const CompactRtl: Story = { args: { open: true }, globals: { viewport: 'compact', direction: 'rtl' } };

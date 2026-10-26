@@ -4,6 +4,13 @@ These examples follow the stable architecture in the [ADRs](adr/README.md). Comp
 
 ## Example map
 
+The [web UI dictionary](ui-dictionary.md) is the categorized reference for public
+controls, native composition recipes, and specialized patterns. Search it in
+Storybook under **Reference / UI dictionary**.
+
+For categorized comparison, trend, composition, distribution, relationship,
+intensity, flow, and progress charts, see [charts and visualization](charts.md).
+
 | Area | Reference | Responsibility | Verification |
 | --- | --- | --- | --- |
 | Atoms | Button, TextInput | Native controls, explicit props, token-based presentation | Native semantics, refs, keyboard events, controlled values, disabled/read-only/loading states |

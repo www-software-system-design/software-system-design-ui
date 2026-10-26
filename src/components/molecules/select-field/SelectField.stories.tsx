@@ -1,0 +1,10 @@
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { SelectField } from './SelectField.js';
+const meta = { title: 'Controls/Forms/SelectField', component: SelectField, tags: ['autodocs'], args: { label: 'Region', defaultValue: 'eu', children: <><option value='eu'>Europe</option><option value='in'>India</option><option disabled value='x'>Unavailable</option></> } } satisfies Meta<typeof SelectField>;
+export default meta;
+type Story = StoryObj<typeof meta>;
+export const Default: Story = {};
+export const CompactRtl: Story = { globals: { viewport: 'compact', direction: 'rtl' } };
+export const Disabled: Story = { args: { disabled: true } };
+export const Invalid: Story = { args: { error: 'Review this field before continuing.' } };
+export const Multiple: Story = { args: { multiple: true, defaultValue: ['eu'] } };

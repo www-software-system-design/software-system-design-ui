@@ -1,5 +1,16 @@
 /* Public semantic tokens. No resets or host element styling. */
 :root,
+[data-ssd-theme] {
+  --ssd-color-button-primary: #0055ff;
+  --ssd-color-on-button-primary: #ffffff;
+  --ssd-color-button-primary-hover: #0048d9;
+  --ssd-color-button-secondary: #e5e7eb;
+  --ssd-color-on-button-secondary: #111827;
+  --ssd-color-button-secondary-hover: #d1d5db;
+  --ssd-color-button-secondary-border: #667085;
+}
+
+:root,
 [data-ssd-theme='light'],
 [data-ssd-theme='system'] {
   --ssd-color-surface: #ffffff;
@@ -9,6 +20,7 @@
   --ssd-color-warning: #855812;
   --ssd-color-brand-cyan: #00e5ff;
   --ssd-color-brand-blue: #0055ff;
+  --ssd-color-brand-indigo: #1610d8;
   --ssd-color-brand-violet: #881bff;
   --ssd-color-brand-magenta: #ef26ff;
   --ssd-color-text: #162339;
@@ -37,6 +49,7 @@
 }
 
 [data-ssd-theme='dark'] {
+  --ssd-color-button-secondary-border: #cbd5e1;
   --ssd-color-surface: #111927;
   --ssd-color-background: #090e19;
   --ssd-color-divider: #2a374b;
@@ -55,6 +68,7 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-ssd-theme='light']),
   [data-ssd-theme='system'] {
+    --ssd-color-button-secondary-border: #cbd5e1;
     --ssd-color-surface: #111927;
   --ssd-color-background: #090e19;
   --ssd-color-divider: #2a374b;

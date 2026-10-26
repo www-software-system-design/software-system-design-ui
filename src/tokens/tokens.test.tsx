@@ -27,6 +27,20 @@ function contrast(first: string, second: string): number {
 }
 
 describe.each(['light', 'dark'])('%s semantic tokens', (theme) => {
+  it('uses the latest container button palette with readable text and hover states', () => {
+    const { container } = render(<div data-ssd-theme={theme} />);
+    const style = getComputedStyle(container.firstElementChild!);
+    const color = (name: string) => style.getPropertyValue('--ssd-color-' + name).trim();
+    expect(color('button-primary')).toBe('#0055ff');
+    expect(color('on-button-primary')).toBe('#ffffff');
+    expect(color('button-secondary')).toBe('#e5e7eb');
+    expect(color('on-button-secondary')).toBe('#111827');
+    expect(color('button-secondary-hover')).toBe('#d1d5db');
+    for (const variant of ['primary', 'secondary']) {
+      expect(contrast(color('on-button-' + variant), color('button-' + variant))).toBeGreaterThanOrEqual(4.5);
+      expect(contrast(color('on-button-' + variant), color('button-' + variant + '-hover'))).toBeGreaterThanOrEqual(4.5);
+    }
+  });
   it('uses the container brand surfaces and blue accents', () => {
     const { container } = render(<div data-ssd-theme={theme} />);
     const style = getComputedStyle(container.firstElementChild!);

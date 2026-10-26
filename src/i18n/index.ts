@@ -1,5 +1,13 @@
 /** Library-owned messages only. Application copy remains consumer-owned. */
 export interface UIMessages {
+  close?: string;
+  chartCategory?: string;
+  chartValue?: string;
+  chartX?: string;
+  chartSize?: string;
+  chartRow?: string;
+  chartColumn?: string;
+  chartEmpty?: string;
   loading: string;
   clearSearch: string;
   searchLabel: string;
@@ -15,16 +23,22 @@ export interface UIMessages {
 }
 
 export const englishMessages: Readonly<UIMessages> = Object.freeze({
+  close: 'Close',
+  chartCategory: 'Category', chartValue: 'Value', chartX: 'X', chartSize: 'Size', chartRow: 'Row', chartColumn: 'Column', chartEmpty: 'No chart data',
   loading: 'Loading', clearSearch: 'Clear search', searchLabel: 'Search', resultsLabel: 'Results', noResults: 'No results', resultsError: 'Results could not be loaded.',
   resultCountZero: '{count} results', resultCountOne: '{count} result', resultCountTwo: '{count} results', resultCountFew: '{count} results', resultCountMany: '{count} results', resultCountOther: '{count} results'
 });
 
 const frenchMessages = Object.freeze({
+  close: 'Fermer',
+  chartCategory: 'Catégorie', chartValue: 'Valeur', chartX: 'X', chartSize: 'Taille', chartRow: 'Ligne', chartColumn: 'Colonne', chartEmpty: 'Aucune donnée',
   loading: 'Chargement', clearSearch: 'Effacer la recherche', searchLabel: 'Rechercher', resultsLabel: 'Résultats', noResults: 'Aucun résultat', resultsError: 'Impossible de charger les résultats.',
   resultCountZero: '{count} résultat', resultCountOne: '{count} résultat', resultCountTwo: '{count} résultats', resultCountFew: '{count} résultats', resultCountMany: '{count} résultats', resultCountOther: '{count} résultats'
 } satisfies UIMessages);
 
 const malayalamMessages = Object.freeze({
+  close: 'അടയ്ക്കുക',
+  chartCategory: 'വിഭാഗം', chartValue: 'മൂല്യം', chartX: 'X', chartSize: 'വലുപ്പം', chartRow: 'വരി', chartColumn: 'നിര', chartEmpty: 'ഡാറ്റ ലഭ്യമല്ല',
   loading: 'ലോഡ് ചെയ്യുന്നു', clearSearch: 'തിരയൽ മായ്ക്കുക', searchLabel: 'തിരയുക', resultsLabel: 'ഫലങ്ങൾ', noResults: 'ഫലങ്ങളൊന്നുമില്ല', resultsError: 'ഫലങ്ങൾ ലോഡ് ചെയ്യാനായില്ല.',
   resultCountZero: 'ഫലങ്ങളൊന്നുമില്ല', resultCountOne: '{count} ഫലം', resultCountTwo: '{count} ഫലങ്ങൾ', resultCountFew: '{count} ഫലങ്ങൾ', resultCountMany: '{count} ഫലങ്ങൾ', resultCountOther: '{count} ഫലങ്ങൾ'
 } satisfies UIMessages);

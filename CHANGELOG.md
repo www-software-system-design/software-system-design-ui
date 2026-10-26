@@ -2,6 +2,23 @@
 
 ## Unreleased
 
+- Adopt the container's current blue SD logo and app icon in Storybook, with
+  official header/footer lockup stories. Match electric-blue primary and gray
+  secondary buttons in both themes using dedicated button tokens. Preserve
+  readable theme-specific link accents and focus/control contrast. See
+  [brand tokens and migration](docs/branding.md).
+
+- Add BrandLockup, NavigationDisclosure, PageNavigation and PrincipleList
+  molecules plus FeatureSection and Carousel organisms, extracted from container
+  commit fd99fbe. Include root/subpath exports, scoped styles, behavior tests and
+  typed stories. Additive APIs target the next minor release; container adoption
+  is separate. See [extraction map](docs/container-commit-fd99fbe.md).
+
+- Add `DataChart` with 15 native SVG chart variants grouped by category, visible
+  data tables, scoped localization, typed stories, and `/data-chart` exports.
+  No new runtime dependencies. This additive API targets the next minor release;
+  see [chart contracts and adoption](docs/charts.md).
+
 - Remove automated npm publication, Git tagging and GitHub release creation.
   Keep validation-only CI and local publication checks; follow the manual
   [release procedure](docs/releases.md). Git tags are no longer required.

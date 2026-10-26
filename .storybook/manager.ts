@@ -8,7 +8,7 @@ addons.setConfig({
     brandUrl: "https://software-system.design",
     brandImage: "./software-system-design-logo.png",
     brandTarget: "_blank",
-    colorPrimary: "#94baff",
+    colorPrimary: "#0055ff",
     colorSecondary: "#94baff",
     appBg: "#090e19",
     appContentBg: "#111927",
