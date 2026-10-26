@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.3.0 - 2026-10-26
+
 - Adopt the container's current blue SD logo and app icon in Storybook, with
   official header/footer lockup stories. Match electric-blue primary and gray
   secondary buttons in both themes using dedicated button tokens. Preserve
@@ -11,13 +13,21 @@
 - Add BrandLockup, NavigationDisclosure, PageNavigation and PrincipleList
   molecules plus FeatureSection and Carousel organisms, extracted from container
   commit fd99fbe. Include root/subpath exports, scoped styles, behavior tests and
-  typed stories. Additive APIs target the next minor release; container adoption
-  is separate. See [extraction map](docs/container-commit-fd99fbe.md).
+  typed stories. Container adoption is separate. See
+  [extraction map](docs/container-commit-fd99fbe.md).
 
 - Add `DataChart` with 15 native SVG chart variants grouped by category, visible
   data tables, scoped localization, typed stories, and `/data-chart` exports.
-  No new runtime dependencies. This additive API targets the next minor release;
-  see [chart contracts and adoption](docs/charts.md).
+  No new runtime dependencies. See [chart contracts and adoption](docs/charts.md).
+
+- Migrate button color overrides to dedicated tokens:
+  `--ssd-color-button-primary`, `--ssd-color-on-button-primary`,
+  `--ssd-color-button-primary-hover`, `--ssd-color-button-secondary`,
+  `--ssd-color-on-button-secondary`, `--ssd-color-button-secondary-hover`,
+  and `--ssd-color-button-secondary-border`. Existing action tokens continue
+  to style links and selected controls; consumers that used them to customize
+  primary buttons must also set the new button tokens. Component props and
+  import paths are unchanged. See [migration guidance](docs/branding.md).
 
 - Remove automated npm publication, Git tagging and GitHub release creation.
   Keep validation-only CI and local publication checks; follow the manual
