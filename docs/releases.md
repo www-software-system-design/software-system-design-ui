@@ -65,6 +65,40 @@ See [ADR 0016](adr/0016-manual-npm-publication.md).
    CLI exit alone does not establish public availability. If a version was
    accepted but is still processing, verify it before attempting publication again.
 
+### Windows resolver setup after a clean install
+
+On the Windows host described in [ADR 0010](adr/0010-scaffold-tooling-and-initial-compatibility.md),
+the installed native `oxc-resolver` binding cannot load its required Visual C++
+runtime. Vitest can report `Cannot find native binding` while initializing the
+Storybook project, including during `npm run check`. The native file can exist
+even though Windows cannot load it.
+
+For this documented local workaround, restore the matching WebAssembly fallback
+after `npm.cmd ci` and before validation:
+
+```powershell
+$resolverVersion = node -p "require('./node_modules/oxc-resolver/package.json').version"
+npm.cmd install --force --no-save --package-lock=true --no-audit --no-fund --cache .npm-cache "@oxc-resolver/binding-wasm32-wasi@$resolverVersion"
+if ($LASTEXITCODE -ne 0) { throw 'Resolver fallback installation failed' }
+node -e "require('oxc-resolver'); console.log('Resolver ready')"
+if ($LASTEXITCODE -ne 0) { throw 'Resolver startup failed' }
+```
+
+`--force` permits this specific fallback's `wasm32` CPU label on the Node host.
+`--no-save` keeps the fallback out of the manifest and prevents lockfile writes;
+`--package-lock=true` retains the pinned dependency resolution. Do not use
+`--package-lock=false` for this restore, because it ignores the pinned versions.
+See [npm install configuration](https://docs.npmjs.com/cli/v11/commands/npm-install/#save).
+The fallback is a local development-tool dependency and is excluded from the
+published UI package. A later `npm ci` removes it, so repeat this step on this
+host after each clean install.
+
+The 0.3.0 failure was reproduced at resolver startup. A clean install followed by
+this restore loaded the resolver successfully, preserved package metadata and
+matched all installed dependency versions represented in the lockfile.
+The subsequent `npm.cmd run check` passed with 150 unit tests and a validated
+0.3.0 archive; all 192 Storybook tests and the Storybook build also passed.
+
 Validation (each failed command stops this PowerShell sequence):
 
 ```powershell
