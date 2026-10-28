@@ -43,3 +43,14 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+
+## Commit and push permissions
+
+- Never commit or push without the user's explicit permission for that action.
+- Commit subjects must match `<feat|fix>(SSD-000): <add|update|resolve|remove|cleanup> message`.
+  Use exactly three digits in the SSD work-item ID and a nonblank summary.
+  Use the actual work-item ID when supplied; do not invent an issue association.
+- Husky's commit-msg hook enforces this format. Do not bypass it.
+- Run `npm run prepare` after installing dependencies if hooks are not active.
+  Run `npm run test:commit-message` to verify the validator.

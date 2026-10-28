@@ -1,2 +1,4 @@
 * text=auto eol=lf
 *.png binary
+
+.husky/* text eol=lf

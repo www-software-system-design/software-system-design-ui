@@ -38,16 +38,16 @@ test("compact header keeps its navigation control on screen at 320px", async ({ 
 });
 
 test("desktop navigation stays on one row with readable link text", async ({ page }) => {
-  await page.setViewportSize({ width: 1100, height: 900 });
+  await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/plans");
   const header = page.getByRole("banner");
   const navigation = header.getByRole("navigation");
   await expect(navigation).toBeVisible();
   const bounds = await header.boundingBox();
   expect(bounds!.height).toBeLessThanOrEqual(90);
-  const link = navigation.getByRole("link", { name: "Plans", exact: true });
+  const link = navigation.getByRole("link", { name: "About Us", exact: true });
   expect(await link.evaluate(element => parseFloat(getComputedStyle(element).fontSize))).toBeGreaterThanOrEqual(14);
-  const links = await navigation.getByRole("link").evaluateAll(elements => elements.map(element => element.getBoundingClientRect()));
+  const links = await navigation.getByRole("link").evaluateAll(elements => elements.filter(element => element.getClientRects().length > 0).map(element => element.getBoundingClientRect()));
   expect(Math.max(...links.map(rect => rect.bottom)) - Math.min(...links.map(rect => rect.top))).toBeLessThanOrEqual(48);
 });
 

@@ -284,7 +284,9 @@
     "check:release": "node scripts/check-release.mjs",
     "prepublishOnly": "npm run check:release && npm run check:package",
     "check": "npm run lint && npm run typecheck && npm test && npm run test:generator && npm run test:config && npm run test:dictionary && npm run test:release && npm run check:package",
-    "test:dictionary": "node --test scripts/ui-dictionary.test.mjs"
+    "test:dictionary": "node --test scripts/ui-dictionary.test.mjs",
+    "prepare": "husky",
+    "test:commit-message": "node --test --test-isolation=none .husky/validate-commit-message.test.mjs"
   },
   "peerDependencies": {
     "react": "^19.3.0",
@@ -312,6 +314,8 @@
     "eslint-plugin-jsx-a11y": "^6.10.0",
     "eslint-plugin-react-hooks": "^7.0.0",
     "globals": "^16.0.0",
+    "http-server": "^14.1.1",
+    "husky": "^9.1.7",
     "jsdom": "^27.0.0",
     "next": "16.4.2",
     "react": "19.3.1",
@@ -320,7 +324,6 @@
     "typescript": "^5.9.0",
     "typescript-eslint": "^8.0.0",
     "vite": "8.3.4",
-    "vitest": "5.0.5",
-    "http-server": "^14.1.1"
+    "vitest": "5.0.5"
   }
 }

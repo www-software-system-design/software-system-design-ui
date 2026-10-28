@@ -52,14 +52,17 @@ test("mobile navigation, theme persistence and demo interest form", async ({
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
   await page.getByRole("button", { name: "Open navigation menu" }).click();
+  await page.getByRole("navigation", { name: "Main navigation" }).locator('summary').click();
   await page
     .getByRole("navigation", { name: "Main navigation" })
     .getByRole("link", { name: "Plans", exact: true })
     .click();
   await expect(page).toHaveURL(/\/plans$/);
+  await page.getByRole("button", { name: "Open navigation menu" }).click();
   await page.getByRole("button", { name: "Switch to light theme" }).click();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   await page.reload();
+  await page.getByRole("button", { name: "Open navigation menu" }).click();
   await expect(
     page.getByRole("button", { name: "Switch to dark theme" }),
   ).toBeVisible();
