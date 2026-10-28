@@ -1,3 +1,8 @@
+import { Timeline, StepList, Callout, SplitLayout } from '@software-system.design/ui';
+import { Timeline as DirectTimeline } from '@software-system.design/ui/timeline';
+import { StepList as DirectStepList } from '@software-system.design/ui/step-list';
+import { Callout as DirectCallout } from '@software-system.design/ui/callout';
+import { SplitLayout as DirectSplitLayout } from '@software-system.design/ui/split-layout';
 import { Button, TextInput } from '@software-system.design/ui';
 import {Checkbox,NativeField,SelectField,Fieldset} from '@software-system.design/ui';
 import {ReferenceControls} from './controls';
@@ -23,6 +28,13 @@ export default function Page() {
     <main>
       <h1>Packed package compatibility</h1>
       <UIProvider theme="light">
+        <SplitLayout secondary={<Callout title="Packed limits"><ServerContent /></Callout>}>
+          <Timeline label="Packed journey" items={[{id:'first',phase:'Foundation',status:'Planned',title:'Packed milestone',description:<ServerContent />}]} />
+          <StepList label="Packed review" items={[{id:'review',title:'Inspect evidence',description:<ServerContent />}]} />
+        </SplitLayout>
+        <DirectSplitLayout secondary={<DirectCallout title="Direct limits" />}>
+          <DirectTimeline label="Direct journey" items={[]} /><DirectStepList label="Direct steps" items={[]} />
+        </DirectSplitLayout>
         <BrandLockup href="/" label="Packed studio home" artwork={<svg width="32" height="32" aria-hidden="true"><rect width="32" height="32" fill="currentColor" /></svg>} wordmark="Packed studio" />
         <NavigationDisclosure label="Packed product"><a href="#packed-feature">Packed overview</a></NavigationDisclosure>
         <PageNavigation label="Packed initiatives" currentHref="#packed-feature" items={[{ href: '#packed-feature', label: 'Packed standards' }]} />

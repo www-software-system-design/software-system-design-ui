@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.4.0 - Unreleased
+
+- Extract Timeline (organism), StepList and static Callout (molecules), and
+  SplitLayout (template) from container commits db48d6e and 8db2d75.
+  Add typed stories, root/subpath exports, dictionary references, scoped RTL
+  styles, and packed SSR coverage. No new runtime dependencies.
+- Existing APIs remain compatible. See docs/container-last-two-commits.md
+  for the atomic decomposition and post-publication adoption examples.
+
+
 ## 0.3.1 - 2026-10-28
 
 - Use the supplied complete logo with its built-in wordmark in the Storybook

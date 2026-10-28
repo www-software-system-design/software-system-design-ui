@@ -64,3 +64,6 @@ The browser suite mocks GitHub responses and never writes to the real project bo
 Publishing/deployment is a separate authorized release. After publication replace
 the container's file dependency with `@software-system.design/ui@^0.2.0`, update its
 lockfile, remove the vendored archive and rerun the consumer checks.
+
+See [About, Governance and Legislation extraction](container-last-two-commits.md)
+for Timeline, StepList, Callout and SplitLayout contracts and adoption.

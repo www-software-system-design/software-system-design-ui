@@ -121,3 +121,18 @@ test('composes every atomic layer and a public hook without hydration errors', a
   await expect(content.getByRole('status')).toHaveText('3 results');
   expect(errors).toEqual([]);
 });
+
+test('serves informational patterns from root and subpath exports without JavaScript', async ({browser}) => {
+ const context = await browser.newContext({javaScriptEnabled:false});
+ try {
+  const page = await context.newPage();
+  await page.goto('http://127.0.0.1:3100');
+  await expect(page.getByRole('list',{name:'Packed journey'})).toContainText('Planned');
+  await expect(page.getByRole('heading',{name:'Packed milestone'})).toBeVisible();
+  await expect(page.getByRole('list',{name:'Packed review'})).toContainText('Content prepared by the server');
+  await expect(page.getByRole('complementary',{name:'Packed limits'})).toHaveCSS('border-inline-start-width','3px');
+  await expect(page.getByRole('complementary',{name:'Direct limits'})).toBeVisible();
+  await expect(page.getByRole('list',{name:'Direct journey'})).toBeAttached();
+  await expect(page.getByRole('list',{name:'Direct steps'})).toBeAttached();
+ } finally { await context.close(); }
+});

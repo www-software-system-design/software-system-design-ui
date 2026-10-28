@@ -27,9 +27,9 @@ infer support from a similar name.
 | Navigation | Breadcrumbs, Tabs, Pagination, SiteHeader, SiteFooter |
 | Feedback | Alert, ContentState, Spinner, ProgressBar, Meter, Skeleton |
 | Overlays | Dialog, Tooltip |
-| Content | Avatar, Badge, Separator, Disclosure, Accordion, ContentCard, SectionHeading |
+| Content | Avatar, Badge, Separator, Disclosure, Accordion, ContentCard, SectionHeading, StepList, Callout, Timeline |
 | Data display | Statistic, DataTable, DataChart, SearchPanel |
-| Layout | ExplorerLayout, MarketingLayout |
+| Layout | ExplorerLayout, MarketingLayout, SplitLayout |
 
 All components have root and kebab-case subpath imports. See the JSON inventory
 for the exact subpath and Storybook destination. Import styles once:

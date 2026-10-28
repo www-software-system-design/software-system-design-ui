@@ -1712,6 +1712,70 @@
       "source": "src/components/organisms/carousel/Carousel.tsx",
       "storyFile": "src/components/organisms/carousel/Carousel.stories.tsx",
       "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "step-list",
+      "name": "StepList",
+      "category": "Content",
+      "kind": "component",
+      "component": "StepList",
+      "subpath": "step-list",
+      "purpose": "Ordered descriptive steps with configurable heading depth.",
+      "aliases": [
+        "step-list"
+      ],
+      "story": "molecules-steplist--default",
+      "source": "src/components/molecules/step-list/StepList.tsx",
+      "storyFile": "src/components/molecules/step-list/StepList.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "timeline",
+      "name": "Timeline",
+      "category": "Content",
+      "kind": "component",
+      "component": "Timeline",
+      "subpath": "timeline",
+      "purpose": "Ordered milestones with caller-owned phase and status.",
+      "aliases": [
+        "timeline"
+      ],
+      "story": "organisms-timeline--default",
+      "source": "src/components/organisms/timeline/Timeline.tsx",
+      "storyFile": "src/components/organisms/timeline/Timeline.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "callout",
+      "name": "Callout",
+      "category": "Content",
+      "kind": "component",
+      "component": "Callout",
+      "subpath": "callout",
+      "purpose": "Static complementary content with an associated heading.",
+      "aliases": [
+        "callout"
+      ],
+      "story": "molecules-callout--default",
+      "source": "src/components/molecules/callout/Callout.tsx",
+      "storyFile": "src/components/molecules/callout/Callout.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+      "id": "split-layout",
+      "name": "SplitLayout",
+      "category": "Layout",
+      "kind": "component",
+      "component": "SplitLayout",
+      "subpath": "split-layout",
+      "purpose": "Responsive primary and secondary content slots.",
+      "aliases": [
+        "split-layout"
+      ],
+      "story": "templates-splitlayout--default",
+      "source": "src/components/templates/split-layout/SplitLayout.tsx",
+      "storyFile": "src/components/templates/split-layout/SplitLayout.stories.tsx",
+      "standard": "https://html.spec.whatwg.org/multipage/"
     }
   ]
 }

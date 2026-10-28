@@ -111,3 +111,6 @@ The packed Next.js consumer directly imports root/subpath APIs, renders initial 
 - [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
 - [React useId and independent roots](https://react.dev/reference/react/useId)
 - [Storybook testing](https://storybook.js.org/docs/writing-tests)
+
+See [About, Governance and Legislation extraction](container-last-two-commits.md)
+for Timeline, StepList, Callout and SplitLayout contracts and adoption.

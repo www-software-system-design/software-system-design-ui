@@ -12,6 +12,12 @@ GitHub releases. Follow the release guide to publish a tested archive locally.
 
 ## Setup
 
+The next minor release, **0.4.0**, adds Timeline, StepList, Callout and SplitLayout
+from the container's About, Governance and Legislation pages. See the
+[atomic decomposition, Storybook references and adoption examples](docs/container-last-two-commits.md).
+These additions are prepared for manual publication; changing the package version
+does not publish it.
+
 Use Node.js 24 LTS (minimum 22.12) and npm. Run npm ci, then npx playwright install chromium. On PowerShell with script execution disabled, use npm.cmd and npx.cmd. Windows native dependencies require the standard Microsoft Visual C++ runtime; install it through your normal machine setup if a native resolver reports ERR_DLOPEN_FAILED. Linux browser runners may need npx playwright install --with-deps chromium.
 
 ## Commands
