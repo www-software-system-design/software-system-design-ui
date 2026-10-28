@@ -1,6 +1,10 @@
 # Changelog
 
-## Unreleased
+## 0.3.1 - 2026-10-28
+
+- Use the supplied complete logo with its built-in wordmark in the Storybook
+  sidebar, replacing the separate icon and rendered text.
+  Published component APIs are unchanged.
 
 ## 0.3.0 - 2026-10-26
 

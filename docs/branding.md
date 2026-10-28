@@ -11,6 +11,12 @@ The favicon copies the container's 512px app icon. Earlier ribbon artwork is
 replaced. Assets remain documentation-only and are excluded from the npm package.
 BrandLockup and the studio layout stories show the official mark alongside the
 three-line Software- / System. / Design wordmark.
+The Storybook sidebar uses the supplied `ssd-logo-dark.png`, an exact copy of
+the 1774 by 887 image supplied on 28 October 2026, including its built-in
+wordmark. Its SHA-256 is
+`7356e57aaef59492c63b7ebc1aa1c01f6d2b2d7902aaf8fd9c7543dcadc9c51a`.
+It renders at 220px wide with proportional height and no separate text or
+cropping. The link retains its accessible Software-System.Design UI name.
 
 | Role | Light | Dark |
 | --- | --- | --- |
@@ -62,6 +68,43 @@ through the existing `@software-system.design/ui/styles.css` entry. Product
 assets, theme preference storage and document metadata remain application-owned.
 
 ## Validation evidence
+
+Complete sidebar logo update, Windows, 28 October 2026:
+
+- Red: the manager browser test expected `./ssd-logo-dark.png` and failed
+  against the previous `./software-system-design-logo.png`.
+- Green: the new image loads at its original 1774 by 887 dimensions, preserves
+  its 2:1 aspect ratio, and has no duplicate rendered text. Reviewed and updated
+  only `storybook-brand.png`.
+- `npm.cmd run check`: all underlying checks completed successfully, including
+  150 unit tests and validation of 220 packed files.
+- `npm.cmd run test:stories`: 192 passed across 66 files.
+- `npm.cmd run build:storybook`: reported successful completion.
+  These three redirected PowerShell invocations returned status 1 because
+  native stderr warnings were surfaced as PowerShell errors; their logs record
+  the successful checks/build above.
+- `npx.cmd playwright test --config .artifacts/brand-alignment-visual.config.mjs
+  --workers=3`: 37 passed, using port 6007; the reviewed baseline passed without
+  further updates.
+- Packed-consumer integration was not rerun: only Storybook manager assets and
+  styles changed; published runtime components, styles and exports are unchanged.
+
+Sidebar wordmark update, Windows, 28 October 2026:
+
+- The manager regression test first failed because the wordmark was absent.
+  After implementation, its three-line and right-side alignment assertions
+  passed. Reviewed and updated only `storybook-brand.png`.
+- The follow-up alignment regression failed before the larger artwork frame
+  existed, then passed with a 72px visible mark and matching top/bottom text
+  bounds. Reviewed the revised screenshot, including the source-image padding.
+- `npm.cmd run check`: passed, including 150 unit tests and package validation.
+- `npm.cmd run test:stories`: 192 passed across 66 files.
+- `npm.cmd run build:storybook`: passed.
+- `npm.cmd run test:visual -- --workers=3`: all 37 passed.
+  The alignment follow-up uses the same suite on port 6007 via the ignored
+  `.artifacts/brand-alignment-visual.config.mjs` override because 6006 is occupied.
+- Packed-consumer integration was not rerun: this change affects only the
+  Storybook manager, with no published runtime, styles, or export changes.
 
 Executed on Windows, 26 October 2026:
 

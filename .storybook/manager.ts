@@ -4,9 +4,8 @@ import { create } from "storybook/theming/create";
 addons.setConfig({
   theme: create({
     base: "dark",
-    brandTitle: "Software-System.Design UI",
+    brandTitle: `<span class="ssd-storybook-brand"><img src="./ssd-logo-dark.png" width="220" height="110" alt="Software-System.Design UI" /></span>`,
     brandUrl: "https://software-system.design",
-    brandImage: "./software-system-design-logo.png",
     brandTarget: "_blank",
     colorPrimary: "#0055ff",
     colorSecondary: "#94baff",

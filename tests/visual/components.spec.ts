@@ -40,7 +40,15 @@ test('Storybook manager uses the supplied brand identity',async({page})=>{
   await page.goto('/?path=/story/templates-marketing-layout--studio');
   await expect(page.getByRole('link',{name:'Software-System.Design UI'})).toBeVisible();
   const brand = page.getByRole('link', { name: 'Software-System.Design UI' });
-  await expect(brand.getByRole('img')).toHaveJSProperty('naturalWidth', 1254);
+  const logo = brand.getByRole('img');
+  await expect(logo).toHaveAttribute('src', './ssd-logo-dark.png');
+  await expect(logo).toHaveJSProperty('naturalWidth', 1774);
+  await expect(logo).toHaveJSProperty('naturalHeight', 887);
+  await expect(brand).toHaveText('');
+  const logoBox = await logo.boundingBox();
+  expect(logoBox).not.toBeNull();
+  expect(logoBox!.width).toBeGreaterThanOrEqual(200);
+  expect(logoBox!.width / logoBox!.height).toBeCloseTo(2, 1);
   await expect(brand).toHaveScreenshot('storybook-brand.png', { animations: 'disabled' });
   await expect(page.locator('link[rel="icon"]').first()).toHaveAttribute('href',/software-system-design-icon\.png/);
 });
